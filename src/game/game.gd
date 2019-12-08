@@ -9,6 +9,7 @@ var level: Level
 
 func _ready():
 	_load_level(levels.test)
+	Clock.start()
 
 func reset_contents():
 	if level != null:
