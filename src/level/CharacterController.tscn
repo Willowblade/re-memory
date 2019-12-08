@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/level/character_controller.gd" type="Script" id=1]
+[ext_resource path="res://src/level/Character.tscn" type="PackedScene" id=2]
+
+[node name="CharacterController" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

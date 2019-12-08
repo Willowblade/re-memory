@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="CenteredMenu" type="CenterContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -360.0
+margin_right = 102.0
+margin_bottom = 360.0
+theme = SubResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 45.0
+margin_top = 303.0
+margin_right = 159.0
+margin_bottom = 417.0
+
+[node name="Contents" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 100, 100 )
+custom_constants/separation = 0

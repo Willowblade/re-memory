@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/CenteredMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/escape_menu.gd" type="Script" id=2]
+
+[node name="EscapeMenu" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PanelContainer" parent="." index="0"]
+margin_left = 41.0
+margin_top = 271.0
+margin_right = 162.0
+margin_bottom = 449.0
+
+[node name="Contents" parent="PanelContainer" index="0"]
+margin_right = 114.0
+margin_bottom = 171.0
+custom_constants/separation = 30
+
+[node name="Pausing" type="Label" parent="PanelContainer/Contents" index="0"]
+margin_right = 107.0
+margin_bottom = 14.0
+text = "Game Paused"
+align = 1
+valign = 1
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/Contents" index="1"]
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 64.0
+text = "Resume"
+
+[node name="ExitMenuButton" type="Button" parent="PanelContainer/Contents" index="2"]
+margin_top = 94.0
+margin_right = 107.0
+margin_bottom = 114.0
+text = "Exit to menu"
+
+[node name="ExitDesktopButton" type="Button" parent="PanelContainer/Contents" index="3"]
+margin_top = 144.0
+margin_right = 107.0
+margin_bottom = 164.0
+text = "Exit to desktop"

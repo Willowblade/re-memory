@@ -1,0 +1,84 @@
+[gd_resource type="SpriteFrames" format=2]
+
+[resource]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "idle_down_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_down_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_up_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_up_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_up_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_up_left",
+"speed": 5.0
+} ]

@@ -1,0 +1,1 @@
+You'd typically want your graphics here. It's recommended to have your source files here as well for jams.
