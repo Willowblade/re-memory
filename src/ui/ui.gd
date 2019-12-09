@@ -5,6 +5,9 @@ onready var menus = {
 	"escape": get_node("EscapeMenu")
 }
 
+onready var dialogue = $Dialogue
+onready var clock = $Clock
+
 var enabled = false
 
 var open_uis = []
@@ -14,6 +17,7 @@ func _ready():
 	for child in get_children():
 		child.hide()
 		child.connect("close", self, "_on_close_ui")
+	clock.show()
 
 func enable():
 	enabled = true

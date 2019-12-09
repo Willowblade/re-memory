@@ -10,13 +10,10 @@ func _ready():
 func go_to_game():
 	AudioEngine.reset()
 	get_tree().change_scene_to(game)
-	UI.enable()
 	
 func go_to_main_menu():
 	AudioEngine.reset()
 	get_tree().change_scene_to(menu)
-	UI.reset()
-	UI.disable()
 	
 func pause():
 	get_tree().paused = true

@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var ui = $UI
 
 onready var levels = {
 	"test": preload("res://src/level/levels/TestLevelBase.tscn")
@@ -28,6 +29,8 @@ func _load_level(new_level_scene: PackedScene):
 	
 	for transition in level.transitions:
 		transition.connect("interacted", self, "_on_transition_interacted")
+		
+	ui.clock.connect("finished", self, "_on_clock_finised")
 	
 	
 func _on_transition_interacted(transition: Transition):

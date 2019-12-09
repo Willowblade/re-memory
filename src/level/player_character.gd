@@ -49,5 +49,5 @@ func _physics_process(delta):
 		
 	update_animation(velocity)
 	
-	
-	move_and_slide(velocity, Vector2(0, -1))	
+	# fixes sliding along when pressed against an NPC
+	move_and_slide(velocity, orientation.normalized())
