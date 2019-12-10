@@ -1,32 +1,30 @@
 extends Node
 
 
-var now: float
+var always_running_timer: float
+var timer: float
 
-var seconds_per_hour: float = 15
+var in_game_time_enabled: bool = false
 
 func _ready():
-	set_process(false)
-	
+	pass
 
 func reset():
-	now = 0
+	timer = 0
 	
 func start():
-	now = 0
-	set_process(true)
+	timer = 0
 	
 func pause():
-	set_process(false)
+	in_game_time_enabled = false
 	
 func stop():
-	set_process(false)
+	in_game_time_enabled = false
 
 func _process(delta: float):
-	now += delta
+	always_running_timer += delta
+	if in_game_time_enabled:
+		timer += delta
 	
 func get_time():
-	return {
-		"hours": int(now / seconds_per_hour),
-		"minutes": int(60 * fmod(now, seconds_per_hour) / seconds_per_hour),
-	}
+	return timer

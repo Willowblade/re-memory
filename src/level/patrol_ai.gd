@@ -41,10 +41,18 @@ func random_direction() -> Vector2:
 		if direction != current_direction:
 			possible_directions.append(direction)
 	return possible_directions[randi() % possible_directions.size()]
+	
+func deactivate_interactions():
+	for child in _character.get_children():
+		if child is Interactable:
+			child.disable()
+			
+func activate_interactions():
+	for child in _character.get_children():
+		if child is Interactable:
+			child.enable()
 
 func start_patrol():
-	
-	print("Starting patrol")
 	if on_cooldown:
 		return
 	if not in_progress:
@@ -58,7 +66,10 @@ func start_patrol():
 		timer.start(1.0)
 		yield(timer, "timeout")
 
+		
 		set_physics_process(true)
+		deactivate_interactions()
+		
 		can_start = true
 		started = false
 
@@ -77,6 +88,7 @@ func _physics_process(delta: float):
 	if not in_progress and not can_start and not started:
 		start_patrol()
 		set_physics_process(false)
+		activate_interactions()
 	if can_start:
 		can_start = false
 		if _is_in_bounds(_character.position + current_direction) and not _character.raycast.is_colliding():
@@ -84,7 +96,9 @@ func _physics_process(delta: float):
 			_destination = _character.position + current_direction
 		else:
 			set_physics_process(false)
+			activate_interactions()
 			start_patrol()
+			
 	if in_progress:
 		var velocity = current_direction.normalized() * _parameters.speed * delta
 		_character.update_animation(velocity)
@@ -96,6 +110,7 @@ func _physics_process(delta: float):
 			_character.position = _destination
 			in_progress = false
 			set_physics_process(false)
+			activate_interactions()
 			end_patrol()
 		
 

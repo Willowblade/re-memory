@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var ui = $UI
 
 onready var levels = {
 	"test": preload("res://src/level/levels/TestLevelBase.tscn")
@@ -10,6 +11,7 @@ var level: Level
 func _ready():
 	_load_level(levels.test)
 	Clock.start()
+	ui.clock.connect("finished", self, "_on_clock_finised")
 
 func reset_contents():
 	if level != null:
@@ -26,11 +28,26 @@ func _load_level(new_level_scene: PackedScene):
 	Transitions.fade_to_transparant()
 	yield(Transitions, "transition_completed")
 	
-	for transition in level.transitions:
-		transition.connect("interacted", self, "_on_transition_interacted")
+	level.player.connect("interacted", self, "_on_player_interacted")
+		
 	
+func _on_player_interacted(interaction: Interactable):
+	print("Player interacted with ", interaction)
+	if interaction is Transition:
+		transition(interaction)
+	elif interaction is TextInteraction:
+		show_text(interaction)
+	elif interaction is DialogueInteraction:
+		show_dialogue(interaction)
+		
+
+func show_text(text_interaction: TextInteraction):
+	ui.show_text(text_interaction.text)
 	
-func _on_transition_interacted(transition: Transition):
+func show_dialogue(dialogue_interaction: DialogueInteraction):
+	pass
+	
+func transition(transition: Transition):
 	print("Transitioning to ", transition.destination_path, transition.destination)
 	var original_orientation: Vector2 = level.player.orientation
 	
@@ -51,8 +68,8 @@ func _on_transition_interacted(transition: Transition):
 	Transitions.fade_to_transparant()
 	yield(Transitions, "transition_completed")
 	
-	for transition in level.transitions:
-		transition.connect("interacted", self, "_on_transition_interacted")
+	level.player.connect("interacted", self, "_on_player_interacted")
+
 		
 	
 	

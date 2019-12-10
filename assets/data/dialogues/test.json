@@ -1,0 +1,44 @@
+{
+    "name": "test",
+    "entries": [
+        {
+            "entry": "start",
+            "conditions": []
+        },
+        {
+            "entry": "start-again",
+            "conditions": [
+                "story:talked-once"
+            ]
+        }
+    ],
+    "parts": {
+        "start": {
+            "text": "Hello! This is a [wave]test dialogue[/wave]."
+        },
+        "start-again": {
+            "text": "You're back? Is the dialogue not working?",
+            "options": [
+                {
+                    "text": "Bugger, it does!",
+                    "next": "works"
+                },
+                {
+                    "text": "Not really...",
+                    "next": "does-not-work"
+                }
+            ]
+        },
+        "works": {
+            "text": "See! If you put your mind to it, you can develop anything!",
+            "options": [
+                {
+                    "text": "Thanks mom!"
+                },
+                {
+                    "text": "Thanks old man?"
+                }
+            ]
+        },
+    }
+}

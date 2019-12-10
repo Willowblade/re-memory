@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/level/Triangle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level/AIRandomPatrolParameters.gd" type="Script" id=3]
 [ext_resource path="res://src/level/Marker.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/interactable/Transition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/interactable/TextInteraction.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
@@ -23,6 +24,9 @@ tile_data = PoolIntArray( -524303, 536870926, 0, -524302, 536870926, 0, -524301,
 [node name="Triangle" parent="Objects" index="1" instance=ExtResource( 2 )]
 position = Vector2( 145.587, 111.554 )
 ai_parameters = SubResource( 1 )
+
+[node name="TextInteraction" parent="Objects/Triangle" index="3" instance=ExtResource( 6 )]
+text = "Look at this sweet young lad..."
 
 [node name="Door" parent="Markers" index="0" instance=ExtResource( 4 )]
 position = Vector2( 144.762, -48.2541 )

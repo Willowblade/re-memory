@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/level/character_controller.gd"
 }, {
+"base": "Interactable",
+"class": "DialogueInteraction",
+"language": "GDScript",
+"path": "res://src/interactable/dialogue_interaction.gd"
+}, {
 "base": "Area2D",
 "class": "Interactable",
 "language": "GDScript",
@@ -65,6 +70,16 @@ _global_script_classes=[ {
 "path": "res://src/level/player_character.gd"
 }, {
 "base": "Interactable",
+"class": "TextInteraction",
+"language": "GDScript",
+"path": "res://src/interactable/text_interaction.gd"
+}, {
+"base": "Control",
+"class": "Textbox",
+"language": "GDScript",
+"path": "res://src/ui/textbox.gd"
+}, {
+"base": "Interactable",
 "class": "Transition",
 "language": "GDScript",
 "path": "res://src/interactable/transition.gd"
@@ -77,16 +92,19 @@ _global_script_class_icons={
 "AIRandomPatrolParameters": "",
 "Character": "",
 "CharacterController": "",
+"DialogueInteraction": "",
 "Interactable": "",
 "Level": "",
 "Marker": "",
 "PlayerCharacter": "",
+"TextInteraction": "",
+"Textbox": "",
 "Transition": ""
 }
 
 [application]
 
-config/name="Game Jam Template"
+config/name="GWJ 16"
 run/main_scene="res://src/game/Game.tscn"
 boot_splash/image="res://assets/ui/splash-icon-all-in.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
@@ -98,7 +116,6 @@ AudioEngine="*res://src/audio/AudioEngine.tscn"
 Inventory="*res://src/globals/Inventory.tscn"
 Transitions="*res://src/globals/Transitions.tscn"
 Flow="*res://src/globals/Flow.tscn"
-UI="*res://src/ui/UI.tscn"
 GameState="*res://src/globals/GameState.tscn"
 Preferences="*res://src/globals/Preferences.tscn"
 Clock="*res://src/globals/Clock.tscn"

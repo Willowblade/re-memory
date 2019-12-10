@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/Textbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/dialogue.gd" type="Script" id=2]
+
+[node name="Dialogue" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Options" type="Control" parent="." index="2"]
+margin_left = 195.341
+margin_top = 15.4333
+margin_right = 836.341
+margin_bottom = 138.433
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0" type="RichTextLabel" parent="Options" index="0"]
+margin_right = 637.0
+margin_bottom = 38.0
+bbcode_enabled = true
+bbcode_text = "Option
+"
+text = "Option
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="RichTextLabel" parent="Options" index="1"]
+margin_top = 32.0
+margin_right = 649.0
+margin_bottom = 71.0
+bbcode_enabled = true
+bbcode_text = "Option"
+text = "Option"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="RichTextLabel" parent="Options" index="2"]
+margin_top = 64.0
+margin_right = 645.0
+margin_bottom = 104.0
+bbcode_enabled = true
+bbcode_text = "Option"
+text = "Option"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="RichTextLabel" parent="Options" index="3"]
+margin_top = 96.0
+margin_right = 648.0
+margin_bottom = 136.0
+bbcode_enabled = true
+bbcode_text = "Option
+"
+text = "Option
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionPointers" type="Control" parent="." index="3"]
+margin_left = 164.54
+margin_top = 15.4333
+margin_right = 805.54
+margin_bottom = 138.433
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="0" type="RichTextLabel" parent="OptionPointers" index="0"]
+margin_right = 637.0
+margin_bottom = 38.0
+bbcode_enabled = true
+bbcode_text = "[ ]
+"
+text = "[ ]
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="RichTextLabel" parent="OptionPointers" index="1"]
+margin_top = 32.0
+margin_right = 649.0
+margin_bottom = 71.0
+bbcode_enabled = true
+bbcode_text = "[ ]
+"
+text = "[ ]
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="RichTextLabel" parent="OptionPointers" index="2"]
+margin_top = 64.0
+margin_right = 645.0
+margin_bottom = 104.0
+bbcode_enabled = true
+bbcode_text = "[ ]
+"
+text = "[ ]
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="RichTextLabel" parent="OptionPointers" index="3"]
+margin_top = 96.0
+margin_right = 648.0
+margin_bottom = 136.0
+bbcode_enabled = true
+bbcode_text = "[ ]
+"
+text = "[ ]
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

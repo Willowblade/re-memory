@@ -44,8 +44,8 @@ func activate():
 		toggle_active()
 		
 func deactivate():
+	tooltip.hide()
 	if enabled:
-		tooltip.hide()
 		toggle_inactive()
 		
 func interact():

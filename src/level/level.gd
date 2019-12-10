@@ -3,6 +3,7 @@ class_name Level
 
 onready var tilemap = $Background/TileMap
 onready var player = $Objects/PlayerCharacter
+onready var clock = $Objects/PlayerCharacter/Camera/Clock
 
 onready var ais = $AIs
 
