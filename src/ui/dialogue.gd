@@ -57,23 +57,23 @@ func handle_inputs(delta: float):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		handle_enter()
-	if Input.is_action_just_pressed("ui_down"):
-		select_option((selected_option + 1) % _player_options.size())
-	if Input.is_action_just_pressed("ui_up"):
-		select_option((selected_option - 1) % _player_options.size())
+	if state == "options":
+		if Input.is_action_just_pressed("ui_down"):
+			select_option((selected_option + 1) % _player_options.size())
+		if Input.is_action_just_pressed("ui_up"):
+			select_option((selected_option - 1) % _player_options.size())
 
 func handle_enter():
-	if Input.is_action_just_pressed("ui_accept"):
-		if state == "text":
-			if completed:
-				timer = 0
-				text_label.visible_characters = 0
-				_progress()
-			else:
-				text_label.visible_characters = text_label.get_total_character_count()
-				completed = true
-		if state == "options":
-			chose_option()
+	if state == "text":
+		if completed:
+			timer = 0
+			text_label.visible_characters = 0
+			_progress()
+		else:
+			text_label.visible_characters = text_label.get_total_character_count()
+			completed = true
+	elif state == "options":
+		chose_option()
 	
 func chose_option():
 	var chosen_option = _player_options[selected_option]
@@ -105,6 +105,7 @@ func set_text(text: String):
 func _on_option_chosen(option):
 	# TODO check for no-effect part
 	if option.has("triggers_conditions") and option.triggers_conditions:
+		# this whole shlock is for integer states. Could be cleaned up I'd wager...
 		var old_values = {}
 		for condition in option.triggers_conditions:
 			for state in _states:
@@ -112,7 +113,7 @@ func _on_option_chosen(option):
 					old_values[state] = PlayerState.get_value_for_state_with_value(state)
 
 		PlayerState.add_states_to_player_states(option.triggers_conditions)	
-
+		
 		# TODO only works for dialogues with 1 value.
 		if old_values:
 			for old_value_prefix in old_values:
@@ -130,14 +131,15 @@ func _on_option_chosen(option):
 		_set_current_part(_dialogue.parts[option.next])
 	else:
 		Logger.debug("Will exit as option does not have next")
-		emit_signal("close")
+		_exit()
 
 func _set_options(options):
 	var valid_options = []
 	for option_properties in options:
-		Logger.info("Adding %s" % option_properties)
 		if not PlayerState.valid_conditions(option_properties.get("conditions", [])):
+			Logger.info("Invalid option at this point: %s" % option_properties)
 			continue
+		Logger.info("Adding option %s" % option_properties)
 		valid_options.append(option_properties)
 
 	set_options(valid_options)
@@ -168,9 +170,6 @@ func _progress():
 
 	#print(get_node("MarginContainer/VBoxContainer/TextLabel").get("rect_size").y)
 
-		
-func _exit():
-	emit_signal("close")
 
 func _get_most_recent_entry():
 	var most_recent_entry = null

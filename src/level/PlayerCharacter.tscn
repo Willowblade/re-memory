@@ -5,16 +5,17 @@
 [ext_resource path="res://assets/graphics/characters/player/Animation.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 6, 6 )
 
 [node name="PlayerCharacter" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 movement_speed = 100.0
 
 [node name="Animation" parent="." index="0"]
+position = Vector2( 0, -22 )
 frames = ExtResource( 3 )
 animation = "walk_down"
-frame = 4
+frame = 1
 playing = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." index="1"]

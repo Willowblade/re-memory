@@ -137,7 +137,7 @@ func reset_player_states():
 		if not "permanent" in state:
 			removed.append(state)
 			_remove_state(state)
-	Logger.info("Removed states: %s" % str(states))
+	Logger.info("Removed states: %s" % str(removed))
 	Logger.info("Remaining states: %s" % str(player_states))
 
 func reset():

@@ -46,7 +46,7 @@ func show_text(text_interaction: TextInteraction):
 	ui.show_text(text_interaction.text)
 	
 func show_dialogue(dialogue_interaction: DialogueInteraction):
-	pass
+	ui.show_dialogue(dialogue_interaction.dialogue_path)
 	
 func transition(transition: Transition):
 	print("Transitioning to ", transition.destination_path, transition.destination)

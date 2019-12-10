@@ -14,7 +14,8 @@
     ],
     "parts": {
         "start": {
-            "text": "Hello! This is a [wave]test dialogue[/wave]."
+            "text": "Hello! This is a [wave]test dialogue[/wave].",
+            "triggers_conditions": ["story:talked-once"]
         },
         "start-again": {
             "text": "You're back? Is the dialogue not working?",
@@ -40,5 +41,16 @@
                 }
             ]
         },
+        "does-not-work": {
+            "text": "Better try developing a little harder!",
+            "options": [
+                {
+                    "text": "Roger that!"
+                },
+                {
+                    "text": "Oh man..."
+                }
+            ]
+        }
     }
 }

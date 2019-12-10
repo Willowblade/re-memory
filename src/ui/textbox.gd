@@ -23,6 +23,10 @@ func _ready():
 func _physics_process(delta: float):
 	handle_inputs(delta)
 
+func _exit():
+	emit_signal("close", self)
+	set_physics_process(false)
+
 func handle_inputs(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
 		print("Got the right input...")
@@ -31,6 +35,7 @@ func handle_inputs(delta: float):
 			text_label.visible_characters = 0
 			emit_signal("finished")
 			emit_signal("close", self)
+			set_physics_process(false)
 		else:
 			text_label.visible_characters = text_label.get_total_character_count()
 			print("Keep going in this part")
@@ -46,6 +51,7 @@ func handle_inputs(delta: float):
 func set_text(text: String):
 	timer = 0
 	text_label.bbcode_text = text
+	text_label.visible = true
 	visible = true
 	completed = false
 	set_physics_process(true)

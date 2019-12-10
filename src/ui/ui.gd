@@ -56,3 +56,9 @@ func show_text(text: String):
 	textbox.set_text(text)
 	
 	open_uis.append(textbox)
+	
+func show_dialogue(dialogue_path: String):
+	Flow.pause()
+	dialogue.set_dialogue_from_path(dialogue_path)
+	
+	open_uis.append(dialogue)
