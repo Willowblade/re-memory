@@ -13,6 +13,7 @@ func _ready():
 	pass
 
 func update_animation(speed: Vector2):
+	print(speed)
 	if speed == Vector2(0, 0):
 		set_idle_animation()
 	else:
@@ -68,9 +69,11 @@ func _set_animation(animation_name: String):
 		animation.animation = animation_name
 
 func set_idle_animation():
+	print("Setting idle animation")
 	_set_directional_animation("idle")
 	
 func set_walk_animation():
+	print("Setting walk animation")
 	_set_directional_animation("walk")
 	
 func get_direction():

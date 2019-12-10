@@ -112,6 +112,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Logger="*res://src/globals/Logger.tscn"
 AudioEngine="*res://src/audio/AudioEngine.tscn"
 Inventory="*res://src/globals/Inventory.tscn"
 Transitions="*res://src/globals/Transitions.tscn"
@@ -119,6 +120,7 @@ Flow="*res://src/globals/Flow.tscn"
 GameState="*res://src/globals/GameState.tscn"
 Preferences="*res://src/globals/Preferences.tscn"
 Clock="*res://src/globals/Clock.tscn"
+PlayerState="*res://src/globals/PlayerState.tscn"
 
 [importer_defaults]
 

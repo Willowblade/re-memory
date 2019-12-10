@@ -17,7 +17,8 @@ var should_pause = true
 
 func _ready():
 	visible = false
-	set_process(false)
+	# this worked when these were just set_process.. and then physics process is always on...
+	set_physics_process(false)
 
 func _physics_process(delta: float):
 	handle_inputs(delta)
@@ -47,4 +48,4 @@ func set_text(text: String):
 	text_label.bbcode_text = text
 	visible = true
 	completed = false
-	set_process(true)
+	set_physics_process(true)
