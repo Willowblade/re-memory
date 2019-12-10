@@ -6,6 +6,7 @@ export var movement_speed: float = 200.0
 
 var current_interactable
 
+signal interacted(interactable)
 
 func _ready():
 	pass
@@ -44,8 +45,10 @@ func _physics_process(delta):
 			current_interactable = null
 
 	if Input.is_action_just_pressed("ui_accept"):
-		if raycast.is_colliding():
-			current_interactable.interact()
+		print(current_interactable)
+		if current_interactable:
+			emit_signal("interacted", current_interactable)
+#			current_interactable.interact()
 		
 	update_animation(velocity)
 	

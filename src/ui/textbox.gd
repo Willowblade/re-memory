@@ -13,21 +13,26 @@ var completed = false
 signal finished
 signal close
 
+var should_pause = true
+
 func _ready():
 	visible = false
 	set_process(false)
-	set_text(text_label.bbcode_text)
 
-func _process(delta: float):
+func _physics_process(delta: float):
 	handle_inputs(delta)
 
 func handle_inputs(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
+		print("Got the right input...")
 		if completed:
+			timer = 0
+			text_label.visible_characters = 0
 			emit_signal("finished")
-			emit_signal("close")
+			emit_signal("close", self)
 		else:
 			text_label.visible_characters = text_label.get_total_character_count()
+			print("Keep going in this part")
 			completed = true
 			
 	if not completed:

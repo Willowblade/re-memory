@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/level/character_controller.gd"
 }, {
+"base": "Interactable",
+"class": "DialogueInteraction",
+"language": "GDScript",
+"path": "res://src/interactable/dialogue_interaction.gd"
+}, {
 "base": "Area2D",
 "class": "Interactable",
 "language": "GDScript",
@@ -64,6 +69,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/level/player_character.gd"
 }, {
+"base": "Interactable",
+"class": "TextInteraction",
+"language": "GDScript",
+"path": "res://src/interactable/text_interaction.gd"
+}, {
 "base": "Control",
 "class": "Textbox",
 "language": "GDScript",
@@ -82,10 +92,12 @@ _global_script_class_icons={
 "AIRandomPatrolParameters": "",
 "Character": "",
 "CharacterController": "",
+"DialogueInteraction": "",
 "Interactable": "",
 "Level": "",
 "Marker": "",
 "PlayerCharacter": "",
+"TextInteraction": "",
 "Textbox": "",
 "Transition": ""
 }

@@ -17,7 +17,7 @@ func _ready():
 		
 #	set_options(["Option 1", "Another option"])
 #	set_options(["Option 1", "Another option", "A third option"])
-	set_options(["Option 1", "Another option", "A third option", "Even a fourth option"])
+#	set_options(["Option 1", "Another option", "A third option", "Even a fourth option"])
 	
 	
 func set_options(player_options):
@@ -45,9 +45,10 @@ func handle_inputs(delta: float):
 		.handle_inputs(delta)
 	elif state == "options":
 		if Input.is_action_just_pressed("ui_accept"):
+			
 			chose_option()
 			emit_signal("finished")
-			emit_signal("close")
+			emit_signal("close", self)
 		if Input.is_action_just_pressed("ui_down"):
 			select_option((selected_option + 1) % _player_options.size())
 		if Input.is_action_just_pressed("ui_up"):
@@ -73,8 +74,6 @@ func select_option(index: int):
 		else:
 			option_pointers[i].bbcode_text = "[   ]"
 
-			
-	 
 func set_text(text: String):
 	state = "text"
 	for option in options:

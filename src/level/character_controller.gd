@@ -15,7 +15,9 @@ var character: Character
 var action: Dictionary
 
 func _ready():
-	pass
+	for child in get_children():
+		if child is Interactable:
+			child.connect("interacted", self, "_on_interaction_interacted")
 		
 func generate_ai():
 	if ai_parameters:
@@ -23,3 +25,8 @@ func generate_ai():
 	else:
 		return ai_scenes.IDLE.instance()
 
+func turn_towards(coordinates: Vector2):
+	set_orientation(position - coordinates)
+
+func _on_interaction_interacted():
+	turn_towards(get_node("../..").player.position)
