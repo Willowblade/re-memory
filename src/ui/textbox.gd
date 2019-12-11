@@ -16,6 +16,7 @@ signal close
 var should_pause = true
 
 func _ready():
+	text_label.visible_characters = 0
 	visible = false
 	# this worked when these were just set_process.. and then physics process is always on...
 	set_physics_process(false)

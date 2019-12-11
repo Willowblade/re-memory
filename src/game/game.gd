@@ -3,14 +3,14 @@ extends Node2D
 onready var ui = $UI
 
 onready var levels = {
-	"test": preload("res://src/level/levels/TestLevelBase.tscn"),
+	"base": preload("res://src/level/levels/TestLevelBase.tscn"),
 	"destination": preload("res://src/level/levels/TestLevelDestination.tscn"),
 }
 
 var level: Level
 
 func _ready():
-	_load_level(levels.destination)
+	_load_level(levels.base)
 	Clock.start()
 	ui.clock.connect("finished", self, "_on_clock_finised")
 
