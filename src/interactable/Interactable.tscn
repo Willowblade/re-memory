@@ -13,4 +13,3 @@ script = ExtResource( 1 )
 
 [node name="Tooltip" parent="." instance=ExtResource( 2 )]
 visible = false
-type = "interact"

@@ -5,12 +5,13 @@ onready var ui = $UI
 onready var levels = {
 	"base": preload("res://src/level/levels/TestLevelBase.tscn"),
 	"destination": preload("res://src/level/levels/TestLevelDestination.tscn"),
+	"bedroom": preload("res://src/level/levels/Bedroom.tscn"),
 }
 
 var level: Level
 
 func _ready():
-	_load_level(levels.base)
+	_load_level(levels.bedroom)
 	Clock.start()
 	ui.clock.connect("finished", self, "_on_clock_finised")
 
