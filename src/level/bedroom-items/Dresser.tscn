@@ -4,13 +4,13 @@
 [ext_resource path="res://assets/graphics/furniture_in_room/furniture_6_in_room.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.3507, 14.1809 )
+extents = Vector2( 6.77944, 19.315 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.45538, 13.3581 )
+extents = Vector2( 6.66926, 18.9489 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 7.82733, 31.4293 )
+extents = Vector2( 7.82733, 27.4545 )
 
 [node name="Dresser" instance=ExtResource( 1 )]
 
@@ -18,22 +18,28 @@ extents = Vector2( 7.82733, 31.4293 )
 position = Vector2( 0, -34.1975 )
 texture = ExtResource( 2 )
 
+[node name="ActiveInteraction" parent="." index="1"]
+position = Vector2( 0, 5.06844 )
+
 [node name="CollisionShape" parent="ActiveInteraction" index="0"]
-position = Vector2( 0, -50.7418 )
+position = Vector2( 0.991653, -45.5632 )
 shape = SubResource( 1 )
 
 [node name="Tooltip" parent="ActiveInteraction" index="1"]
 position = Vector2( 0, -52.4473 )
 
+[node name="InactiveInteraction" parent="." index="2"]
+position = Vector2( 0, 5.06844 )
+
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
-position = Vector2( 0, -50.6672 )
+position = Vector2( 1.3222, -45.4886 )
 shape = SubResource( 2 )
 
 [node name="Tooltip" parent="InactiveInteraction" index="1"]
 position = Vector2( 0, -49.6927 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
-position = Vector2( 0, -32.1349 )
+position = Vector2( 0, -27.1766 )
 shape = SubResource( 3 )
 
 [editable path="ActiveInteraction"]

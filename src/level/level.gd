@@ -11,6 +11,20 @@ onready var objects = $Objects.get_children()
 onready var markers = $Markers.get_children()
 onready var transitions = $Transitions.get_children()
 
+onready var animation_player = $AnimationPlayer
+
+
+onready var items = {
+	"bookcase": $Objects/Bookcase,
+	"carpet": $Objects/Carpet,
+	"basket": $Objects/Basket,
+	"tables": $Objects/Tables,
+	"tv": $Objects/TV,
+	"dresser": $Objects/Dresser,
+	"treasure_box": $Objects/TreasureBox,
+}
+
+
 func _ready():
 	for object in objects:
 		if not object is CharacterController:
@@ -22,5 +36,32 @@ func _ready():
 		var ai = object.generate_ai()
 		ai.set_character(object)
 		ais.add_child(ai)
+	
+	for furniture in items:
+		if items[furniture] != null:
+			if furniture in PlayerState.unlocked_furniture:
+				items[furniture].hide
+				items.get_node("KinematicBody2D").get_node("CollisionShape2D").disabled = true
+				items.get_node("TextInteraction").disable()
+	# this causes the scene to load its defaults
+	play_animation("start")
+	
+func play_animation(animation: String):
+	if animation_player == null:
+		Logger.error("Tried to play an animation on a level without AnimationPlayer...")
+		return
+	var animation_list = animation_player.get_animation_list()
+	if not animation in animation_list:
+		Logger.error("Tried to play an animation that doesn't exist in level. Animation name: %s" % [animation])
+		return
 		
+	animation_player.play(animation)
+	
+	
+func add_player_state(state: String):
+	if state in items.keys():
+		if not state in PlayerState.unlocked_furniture:
+			PlayerState.unlocked_furniture.append(state)
+	else:
+		PlayerState.add_state_to_player_states(state)
 

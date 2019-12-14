@@ -12,6 +12,8 @@ onready var clock = $Clock
 
 var open_uis = []
 
+signal closed
+
 func _ready():
 	for child in get_children():
 		if child != clock:
@@ -45,6 +47,8 @@ func _on_close_ui(menu):
 		for open_ui in open_uis:
 			if open_ui.should_pause:
 				return
+	if open_uis.empty():
+		emit_signal("closed")
 		Flow.resume()
 
 func _physics_process(event):

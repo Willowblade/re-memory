@@ -10,6 +10,8 @@ var shapes = []
 onready var tooltip = $Tooltip
 
 
+
+
 signal interacted
 
 
@@ -34,9 +36,11 @@ func enable():
 		shape.disabled = false
 
 func disable():
+	deactivate()
 	enabled = false
 	for shape in shapes:
 		shape.disabled = true
+
 		
 func activate():
 	if enabled:

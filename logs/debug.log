@@ -234,3 +234,8 @@
 10/12/2019-23:2:44 - 22419 - INFO: Adding option {text:Thanks mom!}
 10/12/2019-23:2:44 - 22420 - INFO: Adding option {text:Thanks old man?}
 10/12/2019-23:2:45 - 23353 - DEBUG: Will exit as option does not have next
+13/12/2019-23:53:26 - 2249 - ERROR: Tried to play an animation that doesn't exist in level. Animation name: fly-away-1
+13/12/2019-23:58:30 - 2875 - ERROR: Tried to play an animation that doesn't exist in level. Animation name: fly-away-1
+14/12/2019-0:9:54 - 5926 - ERROR: Tried to play an animation that doesn't exist in level. Animation name: fly-away-1
+14/12/2019-0:9:59 - 11309 - ERROR: Tried to play an animation that doesn't exist in level. Animation name: fly-away-1
+14/12/2019-0:10:5 - 17643 - ERROR: Tried to play an animation that doesn't exist in level. Animation name: fly-away-1

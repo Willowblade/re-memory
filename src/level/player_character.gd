@@ -54,3 +54,6 @@ func _physics_process(delta):
 	
 	# fixes sliding along when pressed against an NPC
 	move_and_slide(velocity, orientation.normalized())
+	
+func interacting(interactable_path: String):
+	emit_signal("interacted", get_node(interactable_path))

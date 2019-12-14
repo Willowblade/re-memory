@@ -2,6 +2,7 @@ extends Interactable
 class_name DialogueInteraction
 
 
+export(String) var animation
 export(String, FILE, "*.json") var dialogue_path
 
 func _ready():
