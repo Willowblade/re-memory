@@ -3,4 +3,5 @@
 [ext_resource path="res://src/globals/clock.gd" type="Script" id=1]
 
 [node name="Clock" type="Node"]
+pause_mode = 2
 script = ExtResource( 1 )

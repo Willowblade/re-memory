@@ -19,13 +19,13 @@ idle_time = 2.0
 idle_time_variation = 2.0
 double_step_chance = 0.1
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.12371, 6.3674 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 4.52953, 6.23213 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "fly-away-2"
 length = 4.0
 tracks/0/type = "value"
@@ -147,7 +147,7 @@ tracks/8/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "fly-away-3"
 length = 4.0
 tracks/0/type = "value"
@@ -269,7 +269,7 @@ tracks/8/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "obtain-treasure-box"
 length = 1.5
 tracks/0/type = "method"
@@ -389,6 +389,20 @@ tracks/8/keys = {
 "update": 1,
 "values": [ "" ]
 }
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "treasure_box" ],
+"method": "add_player_state"
+} ]
+}
 
 [node name="DoorLevel" index="0" instance=ExtResource( 1 )]
 
@@ -412,12 +426,11 @@ texture = ExtResource( 7 )
 offset = Vector2( -4, -12 )
 
 [node name="TextInteraction" parent="Objects/TreasureBox" index="0" instance=ExtResource( 6 )]
-animation = "fly-away-1"
-text = "This is my treasure box..."
+text = "That sure took a while..."
 
 [node name="CollisionShape" parent="Objects/TreasureBox/TextInteraction" index="0"]
 position = Vector2( 0, -1.08221 )
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="Tooltip" parent="Objects/TreasureBox/TextInteraction" index="1"]
 position = Vector2( 0, -16.0979 )
@@ -426,7 +439,7 @@ position = Vector2( 0, -16.0979 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/TreasureBox/KinematicBody2D" index="0"]
 position = Vector2( -0.5411, -0.946938 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 disabled = true
 
 [node name="1" parent="Markers" index="0" instance=ExtResource( 2 )]
@@ -488,9 +501,9 @@ marker_tag = "1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 anims/fly-away-1 = ExtResource( 8 )
-anims/fly-away-2 = SubResource( 5 )
-anims/fly-away-3 = SubResource( 6 )
-anims/obtain-treasure-box = SubResource( 7 )
+anims/fly-away-2 = SubResource( 4 )
+anims/fly-away-3 = SubResource( 5 )
+anims/obtain-treasure-box = SubResource( 6 )
 anims/start = ExtResource( 9 )
 
 [editable path="Objects/TreasureBox/TextInteraction"]

@@ -9,7 +9,6 @@ extends Node
 
 const DICT_UTIL = preload("res://src/util/dict_util.gd")
 
-var inventory = []
 var player_states = []
 
 var unlocked_furniture = []
@@ -24,10 +23,6 @@ func valid_conditions(conditions: Array):
 		if not has_condition(condition):
 			return false
 	return true
-	
-func add_test_inventory():
-	for item in ["key", "characters/person"]:
-		add_item_to_inventory(DICT_UTIL.load_dictionary_from_json("res://assets/data/objects/{item}.json".format({"item": item})))
 
 func add_test_player_states():
 	add_states_to_player_states(["object:angry_guy:picked_up", "object:plant:looked_at","door:door_to_hell:unlocked"])
@@ -46,48 +41,9 @@ func _ready():
 	# test_negation_of_conditions()
 	pass
 	
-func add_item_to_inventory_from_path(item_path):
-	Logger.info("Added item to inventory")
-	var item = DICT_UTIL.load_dictionary_from_json(item_path)
-	inventory.append(item)
-	var state_string = "inventory:{item}".format({"item": item.name})
-	if state_string in player_states:
-		Logger.error("State {state} already in states".format({"state": state_string}))
-	else:
-		_add_state(state_string)
-	
-	emit_signal("updated_inventory")
-	
-func add_item_to_inventory(item):
-	Logger.info("Added item %s to inventory" % str(item))
-	inventory.append(item)
-	var state_string = "inventory:{item}".format({"item": item.name})
-	if state_string in player_states:
-		Logger.error("State {state} already in states".format({"state": state_string}))
-	else:
-		_add_state(state_string)
-	
-	emit_signal("updated_inventory")
-
-func remove_item_from_inventory(item):
-	inventory.erase(item)
-	
-	emit_signal("updated_inventory")
-	
 func _add_state(state: String):
 	Logger.info("Adding state %s" % state)
-	if state.begins_with("inventory-lose:"):
-		var item_name = state.split(":")[1]
-		for item in inventory:
-			if item.name == item_name:
-				Logger.info("Removing item %s!" % item_name)
-				remove_item_from_inventory(item)
-	elif state.begins_with("inventory-get:"):
-		var item_name = state.split(":")[1]
-		Logger.info("Adding item %s from path in objects folder, make sure it exists" % item_name)
-		var item_path = "res://assets/data/objects/%s.json" % item_name
-		add_item_to_inventory_from_path(item_path)
-	elif state.begins_with("!") and state.substr(1, state.length() - 1) in player_states:
+	if state.begins_with("!") and state.substr(1, state.length() - 1) in player_states:
 		Logger.info("Removed the one previously without !")
 		player_states.erase(state.substr(1, state.length() - 1))
 		return
@@ -143,7 +99,6 @@ func reset_player_states():
 	Logger.info("Remaining states: %s" % str(player_states))
 
 func reset():
-	inventory.clear()
 	emit_signal("updated_inventory")
 	player_states.clear()
 	emit_signal("updated_player_states")

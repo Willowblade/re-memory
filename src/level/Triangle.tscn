@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="Triangle" index="0" groups=[
+[node name="Triangle" groups=[
 "ai_controlled",
 ] instance=ExtResource( 1 )]
 

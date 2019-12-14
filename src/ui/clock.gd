@@ -6,7 +6,7 @@ export var start_time = {
 	"minutes": 0
 }
 
-var seconds_per_hour: float = 15
+var seconds_per_hour: float = 20
 export var end_time: Dictionary = {
 	"hours": 12,
 	"minutes": 0

@@ -13,10 +13,37 @@ var level_path: String = ""
 var level: Level
 
 func _ready():
+	game_start()
+	ui.clock.connect("finished", self, "_on_clock_finised")
+
+func _on_clock_finised():
+	Clock.stop()
+	
+	if level != null:
+		Transitions.fade_to_opaque()
+		yield(Transitions, "transition_completed")
+	reset_contents()
+	
+	level_path = "res://src/level/DoorLevel.tscn"
+	_load_level(levels.door)
+	
+	PlayerState.reset_player_states()
+	
+	Transitions.fade_to_transparant()
+	yield(Transitions, "transition_completed")
+	
+	level.player.connect("interacted", self, "_on_player_interacted")
+	
+	Clock.reset()
+	Clock.start()
+	
+	
+func game_start():
+	Clock.reset()
+	Clock.stop()
 	level_path = "res://src/level/DoorLevel.tscn"
 	_load_level(levels.door)
 	Clock.start()
-	ui.clock.connect("finished", self, "_on_clock_finised")
 
 func reset_contents():
 	if level != null:
@@ -78,8 +105,6 @@ func transition(transition: Transition):
 		yield(Transitions, "transition_completed")
 		
 		return
-		
-
 		
 	
 	if level != null:
