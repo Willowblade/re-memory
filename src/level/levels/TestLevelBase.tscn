@@ -7,7 +7,7 @@
 [ext_resource path="res://src/interactable/TextInteraction.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/level/Neuron.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Resource" id=2]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 speed = 30
 width = 5
@@ -16,7 +16,7 @@ idle_time = 0.5
 idle_time_variation = 0.5
 double_step_chance = 0.1
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7.34114, 7.28494 )
 
 [node name="TestLevelBase" instance=ExtResource( 1 )]
@@ -26,14 +26,14 @@ tile_data = PoolIntArray( -524303, 536870926, 0, -524302, 536870926, 0, -524301,
 
 [node name="Neuron" parent="Objects" index="1" instance=ExtResource( 7 )]
 position = Vector2( 78.2948, 63.3266 )
-ai_parameters = SubResource( 2 )
+ai_parameters = SubResource( 1 )
 
 [node name="TextInteraction" parent="Objects/Neuron" index="3" instance=ExtResource( 6 )]
 position = Vector2( 0.177078, -0.277328 )
 text = "Look at this sweet young lad..."
 
 [node name="CollisionShape" parent="Objects/Neuron/TextInteraction" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Destination" parent="Markers" index="0" instance=ExtResource( 4 )]
 position = Vector2( 144.762, -48.2541 )

@@ -11,7 +11,9 @@ const DICT_UTIL = preload("res://src/util/dict_util.gd")
 
 var player_states = []
 
-var unlocked_furniture = []
+var unlocked_furniture = ["treasure_boxx"]
+
+var lever_states = {}
 
 
 signal updated_inventory()

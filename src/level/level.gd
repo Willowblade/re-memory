@@ -27,6 +27,8 @@ onready var items = {
 
 func _ready():
 	for object in objects:
+		if object is Gate:
+			object.update()
 		if not object is CharacterController:
 			continue
 		print("Character ", object.name, " found")
@@ -40,11 +42,18 @@ func _ready():
 	for furniture in items:
 		if items[furniture] != null:
 			if furniture in PlayerState.unlocked_furniture:
-				items[furniture].hide
-				items.get_node("KinematicBody2D").get_node("CollisionShape2D").disabled = true
-				items.get_node("TextInteraction").disable()
+				items[furniture].hide()
+				items[furniture].get_node("KinematicBody2D").get_node("CollisionShape2D").disabled = true
+				items[furniture].get_node("TextInteraction").disable()
 	# this causes the scene to load its defaults
 	play_animation("start")
+	
+	PlayerState.connect("updated_player_states", self, "_on_updated_player_states")
+
+func _on_updated_player_states():
+	for object in objects:
+		if object is Gate:
+			object.update()
 	
 func play_animation(animation: String):
 	if animation_player == null:

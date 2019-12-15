@@ -7,6 +7,7 @@ onready var levels = {
 	"destination": preload("res://src/level/levels/TestLevelDestination.tscn"),
 	"bedroom": preload("res://src/level/levels/Bedroom.tscn"),
 	"door": preload("res://src/level/DoorLevel.tscn"),
+	"main": preload("res://src/level/levels/MainLevel.tscn")
 }
 
 var level_path: String = ""
@@ -42,7 +43,8 @@ func game_start():
 	Clock.reset()
 	Clock.stop()
 	level_path = "res://src/level/DoorLevel.tscn"
-	_load_level(levels.door)
+	level_path = "res://src/level/levels/MainLevel.tscn"
+	_load_level(levels.main)
 	Clock.start()
 
 func reset_contents():
@@ -71,6 +73,8 @@ func _on_player_interacted(interaction: Interactable):
 		show_text(interaction)
 	elif interaction is DialogueInteraction:
 		show_dialogue(interaction)
+	elif interaction is LeverInteraction:
+		interaction.toggle()
 		
 
 func show_text(text_interaction: TextInteraction):

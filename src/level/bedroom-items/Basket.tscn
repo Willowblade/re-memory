@@ -25,12 +25,18 @@ position = Vector2( 0, -0.334702 )
 position = Vector2( 0, -8.82841 )
 shape = SubResource( 1 )
 
+[node name="Tooltip" parent="ActiveInteraction" index="1"]
+position = Vector2( 0, -24.7069 )
+
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, -0.334702 )
 
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
 position = Vector2( 0, -8.9904 )
 shape = SubResource( 2 )
+
+[node name="Tooltip" parent="InactiveInteraction" index="1"]
+position = Vector2( 0, -24.78 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0.0994415, -5.90335 )
