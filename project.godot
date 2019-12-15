@@ -122,6 +122,10 @@ Preferences="*res://src/globals/Preferences.tscn"
 Clock="*res://src/globals/Clock.tscn"
 PlayerState="*res://src/globals/PlayerState.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [importer_defaults]
 
 texture={
