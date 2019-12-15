@@ -26,14 +26,17 @@ extents = Vector2( 12.4196, 84.2393 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 20.4454, 27.1942 )
 
-[node name="Bedroom" instance=ExtResource( 1 )]
+[node name="Bedroom" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="Image" type="Sprite" parent="Background" index="1"]
 z_index = -1
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Background" index="2"]
+[node name="TileMap2" type="TileMap" parent="Background" index="2"]
+format = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background" index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D" index="0"]
 position = Vector2( -0.225952, 73.4291 )
