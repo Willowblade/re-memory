@@ -25,8 +25,8 @@ z_index = -1
 shape = SubResource( 1 )
 
 [node name="Tooltip" parent="ActiveInteraction" index="1"]
-position = Vector2( 0, -21.5446 )
-z_index = -1
+position = Vector2( 0, 0.145193 )
+z_index = 5
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, 45.9548 )
@@ -37,7 +37,8 @@ text = "I would spend hours sitting here playing games."
 shape = SubResource( 2 )
 
 [node name="Tooltip" parent="InactiveInteraction" index="1"]
-position = Vector2( 0, -21.1599 )
+position = Vector2( 0, 0.52989 )
+z_index = 5
 
 [editable path="ActiveInteraction"]
 

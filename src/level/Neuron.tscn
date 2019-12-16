@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/graphics/characters/neuron/Animation.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.84653, 9.14332 )
+extents = Vector2( 8.84653, 10.164 )
 
 [node name="Neuron" instance=ExtResource( 1 )]
 
@@ -12,8 +12,9 @@ extents = Vector2( 8.84653, 9.14332 )
 position = Vector2( 0.12851, -17.574 )
 frames = ExtResource( 2 )
 animation = "walk_down"
-frame = 5
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2( -0.732719, -3.45424 )
 shape = SubResource( 1 )

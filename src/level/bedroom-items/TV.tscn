@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.4786, 8.49277 )
 
-[node name="TV" instance=ExtResource( 1 )]
+[node name="TV" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -14.741 )
@@ -17,14 +17,14 @@ position = Vector2( -1.3222, -17.2479 )
 text = "Best Christmas gift ever..."
 
 [node name="Tooltip" parent="ActiveInteraction" index="1"]
-position = Vector2( 0, -20.5727 )
+position = Vector2( 0, -3.82636 )
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( -1.3222, -17.2479 )
 text = "... Who was it that got me this again?"
 
 [node name="Tooltip" parent="InactiveInteraction" index="1"]
-position = Vector2( 0, -20.5727 )
+position = Vector2( 0, -3.82636 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( -1.54256, -8.59428 )

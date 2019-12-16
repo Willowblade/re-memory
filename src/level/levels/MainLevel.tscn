@@ -35,7 +35,7 @@ code = "shader_type canvas_item;
 
 void fragment() {
     vec4 colour = texture(TEXTURE, UV);
-	if (UV.y > 0.6w) {
+	if (UV.y > 0.5) {
 		colour.a = 0.0
 	}
 
@@ -132,7 +132,7 @@ extents = Vector2( 33.922, 6.23213 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 8.63635, 16 )
 
-[node name="MainLevel" index="0" instance=ExtResource( 1 )]
+[node name="MainLevel" instance=ExtResource( 1 )]
 position = Vector2( -0.250336, 0 )
 script = ExtResource( 2 )
 
@@ -148,10 +148,10 @@ format = 1
 tile_data = PoolIntArray( 131014, 7, 65537, 131015, 7, 0, 131016, 7, 65537, 131018, 7, 65537, 131019, 7, 0, 131020, 7, 65537, 196547, 7, 0, 196548, 7, 0, 196550, 7, 131072, 196551, 7, 131072, 196552, 7, 65536, 196554, 7, 65536, 196555, 7, 131072, 196556, 7, 131072, 262083, 7, 65536, 262084, 7, 131072, 262086, 7, 65537, 262088, 7, 65536, 262089, 7, 65537, 262090, 7, 65536, 262092, 7, 65537, 262093, 7, 0, 327619, 7, 131072, 327621, 7, 0, 327622, 7, 65536, 327624, 7, 131072, 327625, 7, 131072, 327626, 7, 131072, 327628, 7, 65536, 327629, 7, 131072, 393153, 7, 0, 393154, 7, 65537, 393155, 7, 0, 393157, 7, 131072, 393158, 7, 65536, 393159, 7, 0, 393160, 7, 65537, 393162, 7, 0, 393164, 7, 65536, 393166, 7, 65537, 393167, 7, 65537, 458689, 7, 131072, 458690, 7, 65536, 458691, 7, 131072, 458694, 7, 131072, 458695, 7, 131072, 458696, 7, 65536, 458697, 7, 0, 458698, 7, 65536, 458700, 7, 131072, 458702, 7, 65536, 458703, 7, 131072, 524223, 7, 0, 524224, 7, 0, 524226, 7, 131072, 524228, 7, 0, 524229, 7, 0, 524230, 7, 0, 524232, 7, 131072, 524233, 7, 65536, 524234, 7, 131072, 524236, 7, 65537, 524237, 7, 0, 524238, 7, 65536, 524239, 7, 0, 524241, 7, 0, 589759, 7, 131072, 589760, 7, 131073, 589762, 7, 65537, 589764, 7, 131072, 589765, 7, 131072, 589766, 7, 65536, 589767, 7, 0, 589768, 7, 0, 589769, 7, 65536, 589771, 7, 0, 589772, 7, 65536, 589773, 7, 131072, 589774, 7, 131072, 589775, 7, 131072, 589777, 7, 65536, 655296, 7, 65537, 655297, 7, 65537, 655298, 7, 65536, 655300, 7, 0, 655302, 7, 131072, 655303, 7, 65536, 655304, 7, 131072, 655305, 7, 65536, 655307, 7, 131072, 655308, 7, 131072, 655310, 7, 65537, 655311, 7, 0, 655312, 7, 65537, 655313, 7, 65536, 720832, 7, 131073, 720833, 7, 131073, 720834, 7, 65536, 720836, 7, 65536, 720837, 7, 65537, 720839, 7, 65536, 720841, 7, 131072, 720843, 7, 0, 720844, 7, 65537, 720846, 7, 65536, 720847, 7, 131072, 720848, 7, 131072, 720849, 7, 131072, 786368, 7, 0, 786369, 7, 0, 786370, 7, 65536, 786371, 7, 0, 786372, 7, 65536, 786373, 7, 131072, 786374, 7, 65537, 786375, 7, 65536, 786377, 7, 65537, 786378, 7, 65537, 786379, 7, 65536, 786380, 7, 131072, 786382, 7, 65536, 786384, 7, 0, 786385, 7, 0, 851904, 7, 131072, 851905, 7, 131072, 851906, 7, 131072, 851907, 7, 131072, 851908, 7, 65536, 851910, 7, 131072, 851911, 7, 65536, 851913, 7, 65536, 851914, 7, 131072, 851915, 7, 131072, 851917, 7, 65537, 851918, 7, 65536, 851920, 7, 65536, 851921, 7, 131072, 917442, 7, 0, 917444, 7, 65536, 917445, 7, 0, 917447, 7, 131072, 917449, 7, 65536, 917450, 7, 0, 917452, 7, 0, 917453, 7, 65536, 917454, 7, 131073, 917456, 7, 131072, 982978, 7, 131072, 982980, 7, 131072, 982981, 7, 65536, 982983, 7, 0, 982984, 7, 65537, 982985, 7, 65536, 982986, 7, 131072, 982988, 7, 131072, 982989, 7, 131072, 1048515, 7, 65537, 1048517, 7, 131072, 1048519, 7, 131072, 1048520, 7, 65536, 1048521, 7, 65536, 1048523, 7, 65537, 1048524, 7, 0, 1048525, 7, 65537, 1048526, 7, 65537, 1114051, 7, 131072, 1114053, 7, 0, 1114054, 7, 65537, 1114056, 7, 65536, 1114057, 7, 65536, 1114059, 7, 131072, 1114060, 7, 65536, 1114061, 7, 131072, 1114062, 7, 131072, 1179589, 7, 131072, 1179590, 7, 131072, 1179592, 7, 131072, 1179593, 7, 131072, 1179595, 7, 0, 1179596, 7, 65536, 1245131, 7, 131072, 1245132, 7, 131072 )
 
 [node name="PlayerCharacter" parent="Objects" index="0"]
-position = Vector2( -710.017, 162.673 )
+position = Vector2( 27.0014, 158.216 )
 
 [node name="Animation" parent="Objects/PlayerCharacter" index="0"]
-frame = 2
+frame = 1
 
 [node name="Mirror" type="AnimatedSprite" parent="Objects/PlayerCharacter" index="4"]
 material = SubResource( 2 )
@@ -251,7 +251,7 @@ dialogue_path = "res://assets/data/dialogues/start.json"
 shape = SubResource( 4 )
 
 [node name="Tooltip" parent="Objects/Neuron1/DialogueInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Neuron2" parent="Objects" index="19" instance=ExtResource( 7 )]
 position = Vector2( 26.3133, 176.435 )
@@ -264,7 +264,7 @@ text = "There has to be a way to get in here."
 shape = SubResource( 6 )
 
 [node name="Tooltip" parent="Objects/Neuron2/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Neuron3" parent="Objects" index="20" instance=ExtResource( 7 )]
 position = Vector2( -688.015, 148.056 )
@@ -277,7 +277,7 @@ text = "After all the time I spent taking care of this gardne!Look at this mess!
 shape = SubResource( 8 )
 
 [node name="Tooltip" parent="Objects/Neuron3/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="NeuronProfessor" parent="Objects" index="21" instance=ExtResource( 11 )]
 position = Vector2( -910.636, -145.255 )
@@ -291,7 +291,7 @@ ai_parameters = SubResource( 9 )
 
 [node name="Animation" parent="Objects/Neuron5" index="0"]
 animation = "walk_up"
-frame = 4
+frame = 5
 
 [node name="TextInteraction" parent="Objects/Neuron5" index="3" instance=ExtResource( 10 )]
 text = "I can't seem to figure out what these levers do.Perhaps, you can?"
@@ -300,7 +300,7 @@ text = "I can't seem to figure out what these levers do.Perhaps, you can?"
 shape = SubResource( 10 )
 
 [node name="Tooltip" parent="Objects/Neuron5/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Neuron6" parent="Objects" index="23" instance=ExtResource( 7 )]
 position = Vector2( 1013.59, 10.3635 )
@@ -313,7 +313,7 @@ text = "No matter what I do, I keep ending up right back here...  :( :( :( "
 shape = SubResource( 12 )
 
 [node name="Tooltip" parent="Objects/Neuron6/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Basket" parent="Objects" index="24" instance=ExtResource( 12 )]
 position = Vector2( 123.738, 468.904 )
@@ -329,7 +329,7 @@ position = Vector2( -4.34552, -20.7828 )
 shape = SubResource( 13 )
 
 [node name="Tooltip" parent="Objects/Basket/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="CollisionShape2D" parent="Objects/Basket/KinematicBody2D" index="0"]
 position = Vector2( -4.69768, -16.8175 )
@@ -348,7 +348,7 @@ position = Vector2( -2.05627, -12.7226 )
 shape = SubResource( 15 )
 
 [node name="Tooltip" parent="Objects/Dresser/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="CollisionShape2D" parent="Objects/Dresser/KinematicBody2D" index="0"]
 position = Vector2( -2.98275, -14.6976 )
@@ -369,7 +369,7 @@ position = Vector2( -7.05164, -11.3488 )
 shape = SubResource( 17 )
 
 [node name="Tooltip" parent="Objects/Tables/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tables/TextInteraction" index="2"]
 position = Vector2( -28.0965, -32.1733 )
@@ -415,7 +415,7 @@ position = Vector2( -5.60742, -13.392 )
 shape = SubResource( 22 )
 
 [node name="Tooltip" parent="Objects/TV/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="CollisionShape2D" parent="Objects/TV/KinematicBody2D" index="0"]
 position = Vector2( -5.62093, -5.82871 )
@@ -434,7 +434,7 @@ position = Vector2( -4.02405, -12.0066 )
 shape = SubResource( 24 )
 
 [node name="Tooltip" parent="Objects/Carpet/TextInteraction" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="CollisionShape2D" parent="Objects/Carpet/KinematicBody2D" index="0"]
 position = Vector2( -3.37789, -7.47797 )
@@ -500,7 +500,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
 [node name="Tooltip" parent="Transitions/Transition" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition2" parent="Transitions" index="1" instance=ExtResource( 20 )]
 position = Vector2( 1063.82, -17.7165 )
@@ -508,7 +508,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
 [node name="Tooltip" parent="Transitions/Transition2" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition3" parent="Transitions" index="2" instance=ExtResource( 20 )]
 position = Vector2( 967.744, -162.544 )
@@ -516,7 +516,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "5"
 
 [node name="Tooltip" parent="Transitions/Transition3" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition4" parent="Transitions" index="3" instance=ExtResource( 20 )]
 position = Vector2( 1015.79, -162.306 )
@@ -524,7 +524,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "1"
 
 [node name="Tooltip" parent="Transitions/Transition4" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition5" parent="Transitions" index="4" instance=ExtResource( 20 )]
 position = Vector2( 1063.59, -162.544 )
@@ -532,7 +532,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "3"
 
 [node name="Tooltip" parent="Transitions/Transition5" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition6" parent="Transitions" index="5" instance=ExtResource( 20 )]
 position = Vector2( 903.116, -307.163 )
@@ -540,7 +540,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "4"
 
 [node name="Tooltip" parent="Transitions/Transition6" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition7" parent="Transitions" index="6" instance=ExtResource( 20 )]
 position = Vector2( 935.945, -307.775 )
@@ -548,7 +548,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
 [node name="Tooltip" parent="Transitions/Transition7" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition8" parent="Transitions" index="7" instance=ExtResource( 20 )]
 position = Vector2( 1096.09, -307.128 )
@@ -556,7 +556,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
 [node name="Tooltip" parent="Transitions/Transition8" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition9" parent="Transitions" index="8" instance=ExtResource( 20 )]
 position = Vector2( 1127.48, -306.804 )
@@ -564,7 +564,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "1"
 
 [node name="Tooltip" parent="Transitions/Transition9" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition10" parent="Transitions" index="9" instance=ExtResource( 20 )]
 position = Vector2( 919.197, -467.405 )
@@ -572,7 +572,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "3"
 
 [node name="Tooltip" parent="Transitions/Transition10" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition11" parent="Transitions" index="10" instance=ExtResource( 20 )]
 position = Vector2( 1496.92, -291.819 )
@@ -583,7 +583,7 @@ marker_tag = "1"
 position = Vector2( 0, 0.598724 )
 
 [node name="Tooltip" parent="Transitions/Transition11" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition12" parent="Transitions" index="11" instance=ExtResource( 20 )]
 position = Vector2( -631.799, 126.14 )
@@ -594,7 +594,7 @@ marker_tag = "entrance2"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition12" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition13" parent="Transitions" index="12" instance=ExtResource( 20 )]
 position = Vector2( -839.295, -4.62602 )
@@ -606,7 +606,7 @@ position = Vector2( 0, 0.237823 )
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition13" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition15" parent="Transitions" index="13" instance=ExtResource( 20 )]
 position = Vector2( -985.192, -148.901 )
@@ -617,7 +617,7 @@ marker_tag = "maze_quiz"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition15" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition16" parent="Transitions" index="14" instance=ExtResource( 20 )]
 position = Vector2( -296.778, 123.438 )
@@ -628,7 +628,7 @@ marker_tag = "maze"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition16" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition17" parent="Transitions" index="15" instance=ExtResource( 20 )]
 position = Vector2( -121.131, -146.609 )
@@ -639,7 +639,7 @@ marker_tag = "maze"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition17" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition18" parent="Transitions" index="16" instance=ExtResource( 20 )]
 position = Vector2( 120.287, -146.609 )
@@ -650,7 +650,7 @@ marker_tag = "door_puzzle2"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition18" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition19" parent="Transitions" index="17" instance=ExtResource( 20 )]
 position = Vector2( 152.786, -148.931 )
@@ -662,7 +662,7 @@ position = Vector2( 0.307373, 0 )
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition19" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition20" parent="Transitions" index="18" instance=ExtResource( 20 )]
 position = Vector2( 295.934, 122.665 )
@@ -673,7 +673,7 @@ marker_tag = "door_puzzle"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition20" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition21" parent="Transitions" index="19" instance=ExtResource( 20 )]
 position = Vector2( 632.485, 123.295 )
@@ -684,7 +684,7 @@ marker_tag = "entrance3"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition21" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition22" parent="Transitions" index="20" instance=ExtResource( 20 )]
 position = Vector2( 904.12, 10.4811 )
@@ -695,7 +695,7 @@ marker_tag = "entrance"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition22" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Transition23" parent="Transitions" index="21" instance=ExtResource( 20 )]
 position = Vector2( 952.57, 568.127 )
@@ -706,7 +706,7 @@ marker_tag = "entrance"
 shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition23" index="1"]
-type = "interact"
+z_index = 0
 
 [node name="Fog" type="Sprite" parent="." index="5"]
 material = ExtResource( 21 )
