@@ -45,94 +45,94 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 
-[sub_resource type="Resource" id=22]
-script = ExtResource( 8 )
-look_around = null
-change_look_direction_time = 4
-change_look_direction_time_variation = 2.0
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 7.86936, 7.4104 )
-
-[sub_resource type="Resource" id=23]
+[sub_resource type="Resource" id=3]
 script = ExtResource( 8 )
 look_around = null
 change_look_direction_time = 4
 change_look_direction_time_variation = 2.0
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 7.93032, 8.23816 )
+extents = Vector2( 7.86936, 7.4104 )
 
-[sub_resource type="Resource" id=24]
-script = ExtResource( 8 )
-look_around = null
-change_look_direction_time = 4
-change_look_direction_time_variation = 2.0
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 6.4826, 7.12712 )
-
-[sub_resource type="Resource" id=25]
+[sub_resource type="Resource" id=5]
 script = ExtResource( 8 )
 look_around = null
 change_look_direction_time = 4
 change_look_direction_time_variation = 2.0
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 7.45178, 8.07245 )
+extents = Vector2( 7.93032, 8.23816 )
 
-[sub_resource type="Resource" id=26]
+[sub_resource type="Resource" id=7]
 script = ExtResource( 8 )
 look_around = null
 change_look_direction_time = 4
 change_look_direction_time_variation = 2.0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 7.54102, 7.85506 )
-
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 8.86649, 16 )
+extents = Vector2( 6.4826, 7.12712 )
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 9.87991, 14.6769 )
+[sub_resource type="Resource" id=9]
+script = ExtResource( 8 )
+look_around = null
+change_look_direction_time = 4
+change_look_direction_time_variation = 2.0
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 7.71729, 33.2701 )
+extents = Vector2( 7.45178, 8.07245 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 9.15808, 37.3351 )
+[sub_resource type="Resource" id=11]
+script = ExtResource( 8 )
+look_around = null
+change_look_direction_time = 4
+change_look_direction_time_variation = 2.0
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 7.46619, 7.85486 )
+extents = Vector2( 7.54102, 7.85506 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 9.00873, 9.8381 )
+extents = Vector2( 8.86649, 16 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 9.32941, 9.11157 )
+extents = Vector2( 9.87991, 14.6769 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 11.1022, 10 )
+extents = Vector2( 7.71729, 33.2701 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 17.6091, 19.1412 )
+extents = Vector2( 9.15808, 37.3351 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 15.3801, 11.0258 )
+extents = Vector2( 7.46619, 7.85486 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 21.0011, 9.22125 )
+extents = Vector2( 9.00873, 9.8381 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 24.0789, 7.68552 )
+extents = Vector2( 9.32941, 9.11157 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 33.922, 6.23213 )
+extents = Vector2( 11.1022, 10 )
 
 [sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 17.6091, 19.1412 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 15.3801, 11.0258 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 21.0011, 9.22125 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 24.0789, 7.68552 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 33.922, 6.23213 )
+
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 8.63635, 16 )
 
-[node name="MainLevel" instance=ExtResource( 1 )]
+[node name="MainLevel" index="0" instance=ExtResource( 1 )]
 position = Vector2( -0.250336, 0 )
 script = ExtResource( 2 )
 
@@ -148,10 +148,10 @@ format = 1
 tile_data = PoolIntArray( 131014, 7, 65537, 131015, 7, 0, 131016, 7, 65537, 131018, 7, 65537, 131019, 7, 0, 131020, 7, 65537, 196547, 7, 0, 196548, 7, 0, 196550, 7, 131072, 196551, 7, 131072, 196552, 7, 65536, 196554, 7, 65536, 196555, 7, 131072, 196556, 7, 131072, 262083, 7, 65536, 262084, 7, 131072, 262086, 7, 65537, 262088, 7, 65536, 262089, 7, 65537, 262090, 7, 65536, 262092, 7, 65537, 262093, 7, 0, 327619, 7, 131072, 327621, 7, 0, 327622, 7, 65536, 327624, 7, 131072, 327625, 7, 131072, 327626, 7, 131072, 327628, 7, 65536, 327629, 7, 131072, 393153, 7, 0, 393154, 7, 65537, 393155, 7, 0, 393157, 7, 131072, 393158, 7, 65536, 393159, 7, 0, 393160, 7, 65537, 393162, 7, 0, 393164, 7, 65536, 393166, 7, 65537, 393167, 7, 65537, 458689, 7, 131072, 458690, 7, 65536, 458691, 7, 131072, 458694, 7, 131072, 458695, 7, 131072, 458696, 7, 65536, 458697, 7, 0, 458698, 7, 65536, 458700, 7, 131072, 458702, 7, 65536, 458703, 7, 131072, 524223, 7, 0, 524224, 7, 0, 524226, 7, 131072, 524228, 7, 0, 524229, 7, 0, 524230, 7, 0, 524232, 7, 131072, 524233, 7, 65536, 524234, 7, 131072, 524236, 7, 65537, 524237, 7, 0, 524238, 7, 65536, 524239, 7, 0, 524241, 7, 0, 589759, 7, 131072, 589760, 7, 131073, 589762, 7, 65537, 589764, 7, 131072, 589765, 7, 131072, 589766, 7, 65536, 589767, 7, 0, 589768, 7, 0, 589769, 7, 65536, 589771, 7, 0, 589772, 7, 65536, 589773, 7, 131072, 589774, 7, 131072, 589775, 7, 131072, 589777, 7, 65536, 655296, 7, 65537, 655297, 7, 65537, 655298, 7, 65536, 655300, 7, 0, 655302, 7, 131072, 655303, 7, 65536, 655304, 7, 131072, 655305, 7, 65536, 655307, 7, 131072, 655308, 7, 131072, 655310, 7, 65537, 655311, 7, 0, 655312, 7, 65537, 655313, 7, 65536, 720832, 7, 131073, 720833, 7, 131073, 720834, 7, 65536, 720836, 7, 65536, 720837, 7, 65537, 720839, 7, 65536, 720841, 7, 131072, 720843, 7, 0, 720844, 7, 65537, 720846, 7, 65536, 720847, 7, 131072, 720848, 7, 131072, 720849, 7, 131072, 786368, 7, 0, 786369, 7, 0, 786370, 7, 65536, 786371, 7, 0, 786372, 7, 65536, 786373, 7, 131072, 786374, 7, 65537, 786375, 7, 65536, 786377, 7, 65537, 786378, 7, 65537, 786379, 7, 65536, 786380, 7, 131072, 786382, 7, 65536, 786384, 7, 0, 786385, 7, 0, 851904, 7, 131072, 851905, 7, 131072, 851906, 7, 131072, 851907, 7, 131072, 851908, 7, 65536, 851910, 7, 131072, 851911, 7, 65536, 851913, 7, 65536, 851914, 7, 131072, 851915, 7, 131072, 851917, 7, 65537, 851918, 7, 65536, 851920, 7, 65536, 851921, 7, 131072, 917442, 7, 0, 917444, 7, 65536, 917445, 7, 0, 917447, 7, 131072, 917449, 7, 65536, 917450, 7, 0, 917452, 7, 0, 917453, 7, 65536, 917454, 7, 131073, 917456, 7, 131072, 982978, 7, 131072, 982980, 7, 131072, 982981, 7, 65536, 982983, 7, 0, 982984, 7, 65537, 982985, 7, 65536, 982986, 7, 131072, 982988, 7, 131072, 982989, 7, 131072, 1048515, 7, 65537, 1048517, 7, 131072, 1048519, 7, 131072, 1048520, 7, 65536, 1048521, 7, 65536, 1048523, 7, 65537, 1048524, 7, 0, 1048525, 7, 65537, 1048526, 7, 65537, 1114051, 7, 131072, 1114053, 7, 0, 1114054, 7, 65537, 1114056, 7, 65536, 1114057, 7, 65536, 1114059, 7, 131072, 1114060, 7, 65536, 1114061, 7, 131072, 1114062, 7, 131072, 1179589, 7, 131072, 1179590, 7, 131072, 1179592, 7, 131072, 1179593, 7, 131072, 1179595, 7, 0, 1179596, 7, 65536, 1245131, 7, 131072, 1245132, 7, 131072 )
 
 [node name="PlayerCharacter" parent="Objects" index="0"]
-position = Vector2( 1.60437, -79.107 )
+position = Vector2( -710.017, 162.673 )
 
 [node name="Animation" parent="Objects/PlayerCharacter" index="0"]
-frame = 5
+frame = 2
 
 [node name="Mirror" type="AnimatedSprite" parent="Objects/PlayerCharacter" index="4"]
 material = SubResource( 2 )
@@ -159,7 +159,7 @@ position = Vector2( 0.0397301, 0.990776 )
 z_index = 6
 frames = ExtResource( 4 )
 animation = "walk_down"
-frame = 1
+frame = 4
 playing = true
 offset = Vector2( 0, -23 )
 
@@ -242,39 +242,39 @@ required_states = [ "quiz" ]
 
 [node name="Neuron1" parent="Objects" index="18" instance=ExtResource( 7 )]
 position = Vector2( 37.6659, -116.918 )
-ai_parameters = SubResource( 22 )
+ai_parameters = SubResource( 3 )
 
 [node name="DialogueInteraction" parent="Objects/Neuron1" index="3" instance=ExtResource( 9 )]
 dialogue_path = "res://assets/data/dialogues/start.json"
 
 [node name="CollisionShape" parent="Objects/Neuron1/DialogueInteraction" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Tooltip" parent="Objects/Neuron1/DialogueInteraction" index="1"]
 type = "interact"
 
 [node name="Neuron2" parent="Objects" index="19" instance=ExtResource( 7 )]
 position = Vector2( 26.3133, 176.435 )
-ai_parameters = SubResource( 23 )
+ai_parameters = SubResource( 5 )
 
 [node name="TextInteraction" parent="Objects/Neuron2" index="3" instance=ExtResource( 10 )]
 text = "There has to be a way to get in here."
 
 [node name="CollisionShape" parent="Objects/Neuron2/TextInteraction" index="0"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Tooltip" parent="Objects/Neuron2/TextInteraction" index="1"]
 type = "interact"
 
 [node name="Neuron3" parent="Objects" index="20" instance=ExtResource( 7 )]
-position = Vector2( -839.42, 70.2834 )
-ai_parameters = SubResource( 24 )
+position = Vector2( -688.015, 148.056 )
+ai_parameters = SubResource( 7 )
 
 [node name="TextInteraction" parent="Objects/Neuron3" index="3" instance=ExtResource( 10 )]
 text = "After all the time I spent taking care of this gardne!Look at this mess!"
 
 [node name="CollisionShape" parent="Objects/Neuron3/TextInteraction" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 
 [node name="Tooltip" parent="Objects/Neuron3/TextInteraction" index="1"]
 type = "interact"
@@ -287,29 +287,30 @@ dialogue_path = "res://assets/data/dialogues/quiz.json"
 
 [node name="Neuron5" parent="Objects" index="22" instance=ExtResource( 7 )]
 position = Vector2( 1106.5, 612.225 )
-ai_parameters = SubResource( 25 )
+ai_parameters = SubResource( 9 )
 
 [node name="Animation" parent="Objects/Neuron5" index="0"]
 animation = "walk_up"
+frame = 4
 
 [node name="TextInteraction" parent="Objects/Neuron5" index="3" instance=ExtResource( 10 )]
 text = "I can't seem to figure out what these levers do.Perhaps, you can?"
 
 [node name="CollisionShape" parent="Objects/Neuron5/TextInteraction" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="Tooltip" parent="Objects/Neuron5/TextInteraction" index="1"]
 type = "interact"
 
 [node name="Neuron6" parent="Objects" index="23" instance=ExtResource( 7 )]
 position = Vector2( 1013.59, 10.3635 )
-ai_parameters = SubResource( 26 )
+ai_parameters = SubResource( 11 )
 
 [node name="TextInteraction" parent="Objects/Neuron6" index="3" instance=ExtResource( 10 )]
 text = "No matter what I do, I keep ending up right back here...  :( :( :( "
 
 [node name="CollisionShape" parent="Objects/Neuron6/TextInteraction" index="0"]
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 
 [node name="Tooltip" parent="Objects/Neuron6/TextInteraction" index="1"]
 type = "interact"
@@ -325,14 +326,14 @@ text = "Got you!"
 
 [node name="CollisionShape" parent="Objects/Basket/TextInteraction" index="0"]
 position = Vector2( -4.34552, -20.7828 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="Tooltip" parent="Objects/Basket/TextInteraction" index="1"]
 type = "interact"
 
 [node name="CollisionShape2D" parent="Objects/Basket/KinematicBody2D" index="0"]
 position = Vector2( -4.69768, -16.8175 )
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 
 [node name="Dresser" parent="Objects" index="25" instance=ExtResource( 12 )]
 position = Vector2( -1156.34, 71.94 )
@@ -344,14 +345,14 @@ text = "Found you!"
 
 [node name="CollisionShape" parent="Objects/Dresser/TextInteraction" index="0"]
 position = Vector2( -2.05627, -12.7226 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Tooltip" parent="Objects/Dresser/TextInteraction" index="1"]
 type = "interact"
 
 [node name="CollisionShape2D" parent="Objects/Dresser/KinematicBody2D" index="0"]
 position = Vector2( -2.98275, -14.6976 )
-shape = SubResource( 11 )
+shape = SubResource( 16 )
 
 [node name="Tables" parent="Objects" index="26" instance=ExtResource( 12 )]
 position = Vector2( -848.343, -339.578 )
@@ -365,22 +366,22 @@ text = "My tables!"
 
 [node name="CollisionShape" parent="Objects/Tables/TextInteraction" index="0"]
 position = Vector2( -7.05164, -11.3488 )
-shape = SubResource( 12 )
+shape = SubResource( 17 )
 
 [node name="Tooltip" parent="Objects/Tables/TextInteraction" index="1"]
 type = "interact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tables/TextInteraction" index="2"]
 position = Vector2( -28.0965, -32.1733 )
-shape = SubResource( 13 )
+shape = SubResource( 18 )
 
 [node name="CollisionShape2D" parent="Objects/Tables/KinematicBody2D" index="0"]
 position = Vector2( -7.15194, -11.7448 )
-shape = SubResource( 14 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Tables/KinematicBody2D" index="1"]
 position = Vector2( -27.9863, -31.1816 )
-shape = SubResource( 15 )
+shape = SubResource( 20 )
 
 [node name="Sprite" type="Sprite" parent="Objects/Tables" index="2"]
 position = Vector2( -27.0977, -33.0416 )
@@ -399,7 +400,7 @@ text = "Gotcha!"
 
 [node name="CollisionShape2D" parent="Objects/Bookcase/KinematicBody2D" index="0"]
 position = Vector2( -4.4883, -13.5928 )
-shape = SubResource( 16 )
+shape = SubResource( 21 )
 
 [node name="TV" parent="Objects" index="28" instance=ExtResource( 12 )]
 position = Vector2( 1409.61, -335.281 )
@@ -411,14 +412,14 @@ text = "Of all places..."
 
 [node name="CollisionShape" parent="Objects/TV/TextInteraction" index="0"]
 position = Vector2( -5.60742, -13.392 )
-shape = SubResource( 17 )
+shape = SubResource( 22 )
 
 [node name="Tooltip" parent="Objects/TV/TextInteraction" index="1"]
 type = "interact"
 
 [node name="CollisionShape2D" parent="Objects/TV/KinematicBody2D" index="0"]
 position = Vector2( -5.62093, -5.82871 )
-shape = SubResource( 18 )
+shape = SubResource( 23 )
 
 [node name="Carpet" parent="Objects" index="29" instance=ExtResource( 12 )]
 position = Vector2( 1108.27, 317.578 )
@@ -430,14 +431,14 @@ text = "My carpet, my carpet, my kingdom for a carpet."
 
 [node name="CollisionShape" parent="Objects/Carpet/TextInteraction" index="0"]
 position = Vector2( -4.02405, -12.0066 )
-shape = SubResource( 19 )
+shape = SubResource( 24 )
 
 [node name="Tooltip" parent="Objects/Carpet/TextInteraction" index="1"]
 type = "interact"
 
 [node name="CollisionShape2D" parent="Objects/Carpet/KinematicBody2D" index="0"]
 position = Vector2( -3.37789, -7.47797 )
-shape = SubResource( 20 )
+shape = SubResource( 25 )
 
 [node name="1" parent="Markers" index="0" instance=ExtResource( 19 )]
 position = Vector2( 1017.93, 50.4498 )
@@ -590,7 +591,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "entrance2"
 
 [node name="CollisionShape" parent="Transitions/Transition12" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition12" index="1"]
 type = "interact"
@@ -602,7 +603,7 @@ marker_tag = "quiz"
 
 [node name="CollisionShape" parent="Transitions/Transition13" index="0"]
 position = Vector2( 0, 0.237823 )
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition13" index="1"]
 type = "interact"
@@ -613,7 +614,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "maze_quiz"
 
 [node name="CollisionShape" parent="Transitions/Transition15" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition15" index="1"]
 type = "interact"
@@ -624,7 +625,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "maze"
 
 [node name="CollisionShape" parent="Transitions/Transition16" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition16" index="1"]
 type = "interact"
@@ -635,7 +636,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "maze"
 
 [node name="CollisionShape" parent="Transitions/Transition17" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition17" index="1"]
 type = "interact"
@@ -646,7 +647,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "door_puzzle2"
 
 [node name="CollisionShape" parent="Transitions/Transition18" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition18" index="1"]
 type = "interact"
@@ -658,7 +659,7 @@ marker_tag = "gate_puzzle"
 
 [node name="CollisionShape" parent="Transitions/Transition19" index="0"]
 position = Vector2( 0.307373, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition19" index="1"]
 type = "interact"
@@ -669,7 +670,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "door_puzzle"
 
 [node name="CollisionShape" parent="Transitions/Transition20" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition20" index="1"]
 type = "interact"
@@ -680,7 +681,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "entrance3"
 
 [node name="CollisionShape" parent="Transitions/Transition21" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition21" index="1"]
 type = "interact"
@@ -691,7 +692,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "entrance"
 
 [node name="CollisionShape" parent="Transitions/Transition22" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition22" index="1"]
 type = "interact"
@@ -702,7 +703,7 @@ destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "entrance"
 
 [node name="CollisionShape" parent="Transitions/Transition23" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="Tooltip" parent="Transitions/Transition23" index="1"]
 type = "interact"

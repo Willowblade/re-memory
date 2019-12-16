@@ -1,22 +1,24 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/level/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/level/Marker.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/graphics/extra/mind_door_4.png" type="Texture" id=3]
-[ext_resource path="res://src/level/obtain_animation.tres" type="Animation" id=4]
-[ext_resource path="res://src/interactable/TextInteraction.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/level/ObtainableFurniture.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/level/levels/DoorLevelAnimations.tres" type="Animation" id=8]
-[ext_resource path="res://src/level/levels/DoorLevelStart.tres" type="Animation" id=9]
-[ext_resource path="res://assets/shader/fogshader.tres" type="Material" id=10]
-[ext_resource path="res://icon.png" type="Texture" id=11]
-[ext_resource path="res://src/level/empty_level.gd" type="Script" id=14]
-[ext_resource path="res://assets/graphics/characters/player/Animation.tres" type="SpriteFrames" id=15]
-[ext_resource path="res://assets/graphics/tilesets/empty_world.png" type="Texture" id=16]
+[ext_resource path="res://assets/shader/fogshader.tres" type="Material" id=2]
+[ext_resource path="res://src/level/empty_level.gd" type="Script" id=3]
+[ext_resource path="res://assets/graphics/tilesets/empty_world.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/characters/player/Animation.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://src/level/ObtainableFurniture.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/graphics/extra/mind_door_4.png" type="Texture" id=7]
+[ext_resource path="res://src/interactable/TextInteraction.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/level/NeuronProfessor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/interactable/DialogueInteraction.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/level/Marker.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/level/levels/DoorLevelAnimations.tres" type="Animation" id=12]
+[ext_resource path="res://src/level/obtain_animation.tres" type="Animation" id=13]
+[ext_resource path="res://src/level/levels/DoorLevelStart.tres" type="Animation" id=14]
+[ext_resource path="res://icon.png" type="Texture" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "empty_world.png 0"
-0/texture = ExtResource( 16 )
+0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -26,7 +28,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "empty_world.png 1"
-1/texture = ExtResource( 16 )
+1/texture = ExtResource( 4 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -36,7 +38,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "empty_world.png 2"
-2/texture = ExtResource( 16 )
+2/texture = ExtResource( 4 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -415,12 +417,12 @@ tracks/8/keys = {
 } ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 191.364, 1246.71 )
 
-[node name="DoorLevel" index="0" instance=ExtResource( 1 )]
-material = ExtResource( 10 )
-script = ExtResource( 14 )
+[node name="DoorLevel" instance=ExtResource( 1 )]
+material = ExtResource( 2 )
+script = ExtResource( 3 )
 clock_speed = 1.05
 audio_track = "res://assets/audio/lowfi.ogg"
 
@@ -437,14 +439,17 @@ modulate = Color( 1, 1, 1, 0.615686 )
 position = Vector2( 0, 16 )
 scale = Vector2( 1, -1 )
 z_index = -2
-frames = ExtResource( 15 )
+frames = ExtResource( 5 )
 animation = "walk_down"
-frame = 1
+frame = 4
 playing = true
 
-[node name="TreasureBox" parent="Objects" index="1" instance=ExtResource( 7 )]
+[node name="TreasureBox" parent="Objects" index="1" instance=ExtResource( 6 )]
 position = Vector2( 2, -120 )
 z_index = 4
+
+[node name="Tooltip" parent="Objects/TreasureBox/TextInteraction" index="1"]
+type = "interact"
 
 [node name="CollisionShape2D" parent="Objects/TreasureBox/KinematicBody2D" index="0"]
 disabled = true
@@ -454,58 +459,65 @@ disabled = true
 [node name="Sprite" type="Sprite" parent="Objects/StaticBody2D" index="0"]
 position = Vector2( 0.441223, -36.0811 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D" index="1"]
 position = Vector2( 0, -18.4901 )
 shape = SubResource( 2 )
 
-[node name="TextInteraction" parent="Objects/StaticBody2D" index="2" instance=ExtResource( 6 )]
+[node name="TextInteraction" parent="Objects/StaticBody2D" index="2" instance=ExtResource( 8 )]
 position = Vector2( 0.4272, -18.4709 )
 text = "The door doesn't open..."
 
 [node name="Tooltip" parent="Objects/StaticBody2D/TextInteraction" index="1"]
 position = Vector2( 0, -40.1506 )
 z_index = 2
+type = "interact"
 
-[node name="Entrance" parent="Markers" index="0" instance=ExtResource( 2 )]
-position = Vector2( -112.701, 7.38962 )
+[node name="NeuronProfessor" parent="Objects" index="3" instance=ExtResource( 9 )]
+position = Vector2( -1859.15, 2.15685 )
+
+[node name="DialogueInteraction" parent="Objects/NeuronProfessor" index="3" instance=ExtResource( 10 )]
+dialogue_path = "res://assets/data/dialogues/quiz.json"
+
+[node name="Entrance" parent="Markers" index="0" instance=ExtResource( 11 )]
+position = Vector2( -0.0285416, -63.9109 )
 tag = "entrance"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
-anims/fly-away-1 = ExtResource( 8 )
+anims/fly-away-1 = ExtResource( 12 )
 anims/fly-away-2 = SubResource( 3 )
 anims/fly-away-3 = SubResource( 4 )
 anims/fly-away-4 = SubResource( 5 )
-anims/obtain-treasure-box = ExtResource( 4 )
-anims/start = ExtResource( 9 )
+anims/obtain-treasure-box = ExtResource( 13 )
+anims/start = ExtResource( 14 )
 
 [node name="Fog" type="Sprite" parent="." index="6"]
-material = ExtResource( 10 )
+material = ExtResource( 2 )
 position = Vector2( 0.950012, 0 )
 scale = Vector2( 60.5921, 44.4219 )
 z_index = 2
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2( -1282.14, -211.328 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 position = Vector2( -6.7312, -1266.11 )
 rotation = 1.57079
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="2"]
 position = Vector2( 1324.97, -216.862 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" index="3"]
 position = Vector2( 4.46411, 832.022 )
 rotation = 1.57079
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [editable path="Objects/TreasureBox"]
 

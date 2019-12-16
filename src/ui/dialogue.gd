@@ -1,4 +1,5 @@
 extends Textbox
+class_name Dialogue
 
 const DICT_UTIL = preload("res://src/util/dict_util.gd")
 

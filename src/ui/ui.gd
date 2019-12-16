@@ -39,20 +39,38 @@ func open_ui(ui_name, information=null):
 	open_uis.append(menu)
 
 func _on_close_ui(menu):
-	print("Should close")
+	print("Should close menu " + str(menu))
 	menu.hide()
 	open_uis.erase(menu)
+	if menu == menus.escape:
+		for open_ui in open_uis:
+			open_ui.set_physics_process(true)
+		Clock.start()
+		
 	if menu.should_pause:
 		print("Resuming game")
 		for open_ui in open_uis:
 			if open_ui.should_pause:
 				return
+	
 	if open_uis.empty():
 		emit_signal("closed")
 		Flow.resume()
 
+func close_all_ui():
+	if open_uis.size() > 0:
+		for open_ui in open_uis:
+			if open_ui is Dialogue:
+				open_ui._exit()
+			elif open_ui is Textbox:
+				open_ui._exit()
+
 func _physics_process(event):
 	if Input.is_action_just_pressed("ui_menu"):
+#		if open_uis.size() == 0:
+		Clock.stop()
+		for open_ui in open_uis:
+			open_ui.set_physics_process(false)
 		open_ui("escape")
 
 func show_text(text: String):

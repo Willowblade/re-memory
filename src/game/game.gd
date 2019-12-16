@@ -17,6 +17,8 @@ var level: Level
 
 signal level_loaded
 
+var debug = false
+
 func _ready():
 	game_start()
 	ui.clock.connect("finished", self, "_on_clock_finised")
@@ -32,27 +34,34 @@ func _on_clock_finised():
 
 	PlayerState.num_resets += 1 
 		
-	if ui.open_uis.size() > 0:
-		for open_ui in ui.open_uis:
-			ui._on_close_ui(open_ui)
+	ui.close_all_ui()
+		
 			
 	reset_contents()
 	
-	if PlayerState.unlocked_furniture.size() < 7:
-		level_path = "res://src/level/levels/BedroomWakeup.tscn"
+	if debug:
+		level_path = "res://src/level/levels/DoorLevel.tscn"
 		
-		level = levels.bedroom_wakeup.instance()
+		level = levels.empty.instance()
 		add_child(level)
 	else:
-		level_path = "res://src/level/levels/Hospital.tscn"
-		ui.clock.hide()
-		level = levels.hospital_wakeup.instance()
-		add_child(level)
+		if PlayerState.unlocked_furniture.size() < 7:
+			level_path = "res://src/level/levels/BedroomWakeup.tscn"
+			
+			level = levels.bedroom_wakeup.instance()
+			add_child(level)
+		else:
+			level_path = "res://src/level/levels/Hospital.tscn"
+			ui.clock.hide()
+			level = levels.hospital_wakeup.instance()
+			add_child(level)
 	
-	PlayerState.reset_player_states()
+	PlayerState.reset()
 	
 	Transitions.fade_to_transparant()
 	yield(Transitions, "transition_completed")
+	
+	PlayerState.reset()
 	
 	level.player.connect("interacted", self, "_on_player_interacted")
 	
@@ -113,13 +122,20 @@ func _on_clock_finised():
 func game_start():
 	Clock.reset()
 	Clock.stop()
+
+	if debug:
+		level_path = "res://src/level/levels/DoorLevel.tscn"
+		
+		_load_level(levels.empty)
+	else:
+		level_path = "res://src/level/levels/BedroomWakeup.tscn"
+		_load_level(levels.bedroom_wakeup)
 #	level_path = "res://src/level/DoorLevel.tscn"
-	level_path = "res://src/level/levels/MainLevel.tscn"
-	level_path = "res://src/level/levels/Bedroom.tscn"
-	level_path = "res://src/level/levels/BedroomWakeup.tscn"
-#	_load_level(levels.empty)
+#	level_path = "res://src/level/levels/MainLevel.tscn"
+#	level_path = "res://src/level/levels/Bedroom.tscn"
+
 #	_load_level(levels.main)
-	_load_level(levels.bedroom_wakeup)
+
 	yield(self, "level_loaded")
 	if level is BedroomWakeup:
 		ui.show_text("Ouch... My head... What happened, where am I...?")

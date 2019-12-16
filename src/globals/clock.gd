@@ -16,7 +16,7 @@ func reset():
 	
 func start():
 	in_game_time_enabled = true
-	time_data = 0
+#	time_data = 0
 	
 func pause():
 	in_game_time_enabled = false
