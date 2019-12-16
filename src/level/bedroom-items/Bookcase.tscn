@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2623, 6.70007 )
 
-[node name="Bookcase" instance=ExtResource( 1 )]
+[node name="Bookcase" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -16.858 )
@@ -14,7 +14,10 @@ texture = ExtResource( 2 )
 
 [node name="ActiveInteraction" parent="." index="1"]
 position = Vector2( -0.313362, -23.5639 )
-text = "I'm so glad to have my DVD collection back."
+text = "I do love books, I should take more time to read."
+
+[node name="Tooltip" parent="ActiveInteraction" index="1"]
+position = Vector2( 0, -13.3261 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 position = Vector2( -0.696083, -7.01343 )
@@ -22,4 +25,11 @@ shape = SubResource( 1 )
 
 [node name="InactiveInteraction" parent="." index="3"]
 position = Vector2( -0.313362, -23.5639 )
-text = "You may think this is a bookcase, but that's actually the [wave]FRIENS ALL DVDs BOX![/wave]"
+text = "So much space, and so few books..."
+
+[node name="Tooltip" parent="InactiveInteraction" index="1"]
+position = Vector2( 0, -13.1282 )
+
+[editable path="ActiveInteraction"]
+
+[editable path="InactiveInteraction"]

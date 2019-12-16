@@ -105,6 +105,7 @@ func play_background_music(track_path: String):
 	if background_audio != track_path:
 		background_player.stream = load(track_path)
 		background_player.play()
+		background_audio = track_path
 
 func stop_background_music():
 	"""Stops the background music track"""

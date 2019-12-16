@@ -41,14 +41,14 @@ change_look_direction_time_variation = 2.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "idle_down",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "walk_up_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "idle_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 21 ) ],

@@ -13,11 +13,23 @@ position = Vector2( 0, -14.741 )
 texture = ExtResource( 2 )
 
 [node name="ActiveInteraction" parent="." index="1"]
-position = Vector2( -1.3222, -14.741 )
+position = Vector2( -1.3222, -17.2479 )
+text = "Best Christmas gift ever..."
+
+[node name="Tooltip" parent="ActiveInteraction" index="1"]
+position = Vector2( 0, -20.5727 )
 
 [node name="InactiveInteraction" parent="." index="2"]
-position = Vector2( -1.3222, -14.741 )
+position = Vector2( -1.3222, -17.2479 )
+text = "... Who was it that got me this again?"
+
+[node name="Tooltip" parent="InactiveInteraction" index="1"]
+position = Vector2( 0, -20.5727 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( -1.54256, -8.59428 )
 shape = SubResource( 1 )
+
+[editable path="ActiveInteraction"]
+
+[editable path="InactiveInteraction"]

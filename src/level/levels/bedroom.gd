@@ -1,8 +1,10 @@
 extends Level
+class_name Bedroom
 
-
+onready var interaction = $Interactions/TextInteraction
 
 func _ready():
+	
 	var all_items = true
 	for item in items:
 		if item == "treasure_box":
@@ -24,3 +26,8 @@ func prepare_furniture():
 		else:
 			items[item].set_incomplete()
 
+
+func run_start_code():
+	# intended to run interaction but will just do it in Game.tscn
+	pass
+	

@@ -1,0 +1,54 @@
+{
+    "name": "test",
+    "entries": [
+        {
+            "entry": "start",
+            "conditions": []
+        },
+        {
+            "entry": "start-again",
+            "conditions": [
+                "story:talked-once"
+            ]
+        }
+    ],
+    "parts": {
+        "start": {
+            "text": "Hello! Nice to  meet you! It's a [wave]mess[/wave] around here.",
+            "triggers_conditions": ["story:talked-once"],
+            "options": [
+                {
+                    "text": "What happened..? Where am I?",
+                    "next": "question"
+                },
+                {
+                    "text": " I know, I will help sort it out",
+                    "next": "start-again"
+                }
+            ]
+        },
+        "question": {
+            "text": "I'm... not really sure, but there are a lot of things out of place...",
+            "next": "start-again"
+        },
+        "start-again": {
+            "text": "Will you help us put things back to where they go?",
+            "options": [
+                {
+                    "text": "(Hmm... Maybe that's how I can get out of here...) I will do my best!",
+                    "next": "works"
+                },
+                {
+                    "text": "I don't know where to start",
+                    "next": "does-not-work"
+                }
+            ]
+        },
+        "works": {
+            "text": "Thanks! But try to be quick... This world feels, [wave]unstable...[/wave]. I'm not sure how long it can last."
+        },
+        "does-not-work": {
+            "text": "Look around! There's plenty to explore. My great grand neuron once walked through one of these holes between the trees. We never saw him back."
+        }
+    }
+}

@@ -11,7 +11,8 @@ extents = Vector2( 8.84653, 9.14332 )
 [node name="Animation" parent="." index="0"]
 position = Vector2( 0.12851, -17.574 )
 frames = ExtResource( 2 )
-animation = "idle_left"
+animation = "walk_down"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]

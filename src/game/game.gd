@@ -7,11 +7,15 @@ onready var levels = {
 	"destination": preload("res://src/level/levels/TestLevelDestination.tscn"),
 	"bedroom": preload("res://src/level/levels/Bedroom.tscn"),
 	"empty": preload("res://src/level/DoorLevel.tscn"),
-	"main": preload("res://src/level/levels/MainLevel.tscn")
+	"main": preload("res://src/level/levels/MainLevel.tscn"),
+	"bedroom_wakeup": preload("res://src/level/BedroomWakeup.tscn"),
+	"hospital_wakeup": preload("res://src/level/Hospital.tscn")
 }
 
 var level_path: String = ""
 var level: Level
+
+signal level_loaded
 
 func _ready():
 	game_start()
@@ -25,6 +29,8 @@ func _on_clock_finised():
 	if level != null:
 		Transitions.fade_to_opaque()
 		yield(Transitions, "transition_completed")
+
+	PlayerState.num_resets += 1 
 		
 	if ui.open_uis.size() > 0:
 		for open_ui in ui.open_uis:
@@ -32,10 +38,16 @@ func _on_clock_finised():
 			
 	reset_contents()
 	
-	level_path = "res://src/level/levels/Bedroom.tscn"
-	
-	level = levels.bedroom.instance()
-	add_child(level)
+	if PlayerState.unlocked_furniture.size() < 7:
+		level_path = "res://src/level/levels/BedroomWakeup.tscn"
+		
+		level = levels.bedroom_wakeup.instance()
+		add_child(level)
+	else:
+		level_path = "res://src/level/levels/Hospital.tscn"
+		ui.clock.hide()
+		level = levels.hospital_wakeup.instance()
+		add_child(level)
 	
 	PlayerState.reset_player_states()
 	
@@ -47,7 +59,56 @@ func _on_clock_finised():
 	Clock.reset()
 	Clock.start()
 	ui.clock.connect("finished", self, "_on_clock_finised")
-	
+
+#	level.run_start_code()
+	if level is BedroomWakeup:
+		if PlayerState.num_resets == 1:
+			ui.show_text("[wave]Wake up.[/wave]")
+			yield(ui, "closed")
+			yield(get_tree().create_timer(0.5), "timeout")
+			level.set_awake()
+			yield(get_tree().create_timer(0.5), "timeout")
+			ui.show_text("The world went dark... And now I'm here again...")
+			yield(ui, "closed")
+		else:
+			ui.show_text("[wave]Wake up.[/wave]")
+			yield(ui, "closed")
+			level.set_awake()
+			yield(get_tree().create_timer(0.5), "timeout")
+			ui.show_text("I still haven't found everything... I'd better get to it.")
+			yield(get_tree().create_timer(0.5), "timeout")
+			yield(ui, "closed")
+		
+		level_path = "res://src/level/levels/Bedroom.tscn"
+		_load_level(levels.bedroom)
+		yield(self, "level_loaded")
+		
+	if level is Hospital:
+		Clock.stop()
+
+		ui.show_text("[wave]Wake up.[/wave]")
+		yield(ui, "closed")
+		yield(get_tree().create_timer(0.5), "timeout")
+		level.set_awake()
+		yield(get_tree().create_timer(0.5), "timeout")
+		ui.show_text("A hospital room...")
+		yield(ui, "closed")
+		yield(get_tree().create_timer(0.5), "timeout")
+		ui.show_text("I remember... Playing on the street...")
+		yield(ui, "closed")
+		yield(get_tree().create_timer(2.0), "timeout")
+		level.set_asleep()
+		yield(get_tree().create_timer(1.0), "timeout")
+		
+		Transitions.fade_to_opaque()
+		yield(Transitions, "transition_completed")
+		reset_contents()
+		Transitions.fade_to_transparant()
+		yield(Transitions, "transition_completed")
+		yield(get_tree().create_timer(0.5), "timeout")
+		ui.show_text("Thanks for playing! We hope you enjoyed the experience. The game will exit now!")
+		yield(ui, "closed")
+		get_tree().quit()
 	
 func game_start():
 	Clock.reset()
@@ -55,9 +116,22 @@ func game_start():
 #	level_path = "res://src/level/DoorLevel.tscn"
 	level_path = "res://src/level/levels/MainLevel.tscn"
 	level_path = "res://src/level/levels/Bedroom.tscn"
+	level_path = "res://src/level/levels/BedroomWakeup.tscn"
 #	_load_level(levels.empty)
 #	_load_level(levels.main)
-	_load_level(levels.bedroom)
+	_load_level(levels.bedroom_wakeup)
+	yield(self, "level_loaded")
+	if level is BedroomWakeup:
+		ui.show_text("Ouch... My head... What happened, where am I...?")
+		yield(ui, "closed")
+		yield(get_tree().create_timer(0.5), "timeout")
+		level.set_awake()
+		yield(get_tree().create_timer(0.5), "timeout")
+		ui.show_text("I think this is... My room... Everything seems to be missing")
+		yield(ui, "closed")
+		_load_level(levels.bedroom)
+		yield(self, "level_loaded")
+		
 	Clock.start()
 
 func reset_contents():
@@ -76,6 +150,8 @@ func _load_level(new_level_scene: PackedScene):
 	yield(Transitions, "transition_completed")
 	
 	level.player.connect("interacted", self, "_on_player_interacted")
+	
+	emit_signal("level_loaded")
 		
 	
 func _on_player_interacted(interaction: Interactable):

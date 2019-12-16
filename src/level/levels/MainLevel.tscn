@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/graphics/tilesets/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/level/Level.tscn" type="PackedScene" id=2]
@@ -13,6 +13,20 @@
 [ext_resource path="res://assets/graphics/characters/player/Animation.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://src/level/Neuron.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/level/NeuronProfessor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/level/ObtainableFurniture.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_1_in_room.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_5_in_room.png" type="Texture" id=16]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_6_in_room.png" type="Texture" id=17]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_2_in_room.png" type="Texture" id=18]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_4_in_room.png" type="Texture" id=19]
+[ext_resource path="res://assets/graphics/furniture_in_room/furniture_3_in_room.png" type="Texture" id=20]
+[ext_resource path="res://src/level/anims/obtain_animation_carpet.tres" type="Animation" id=21]
+[ext_resource path="res://src/level/anims/obtain_animation_tv.tres" type="Animation" id=22]
+[ext_resource path="res://src/level/anims/obtain_animation_basket.tres" type="Animation" id=23]
+[ext_resource path="res://src/level/anims/obtain_animation_bookcase.tres" type="Animation" id=24]
+[ext_resource path="res://src/level/anims/obtain_animation_dresser.tres" type="Animation" id=25]
+[ext_resource path="res://src/level/anims/obtain_animation_tables.tres" type="Animation" id=26]
+[ext_resource path="res://src/interactable/DialogueInteraction.tscn" type="PackedScene" id=27]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -29,6 +43,60 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 7.86936, 7.4104 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 7.93032, 8.23816 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6.4826, 7.12712 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 7.45178, 8.07245 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 7.54102, 7.85506 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8.86649, 16 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 9.87991, 14.6769 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 7.71729, 33.2701 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 9.15808, 37.3351 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 7.46619, 7.85486 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 9.00873, 9.8381 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 9.32941, 9.11157 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 11.1022, 10 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 17.6091, 19.1412 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 15.3801, 11.0258 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 21.0011, 9.22125 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 24.0789, 7.68552 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 33.922, 6.23213 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.63635, 16 )
@@ -51,16 +119,13 @@ tile_data = PoolIntArray( 131014, 7, 65537, 131015, 7, 0, 131016, 7, 65537, 1310
 [node name="PlayerCharacter" parent="Objects" index="0"]
 position = Vector2( 1.60437, -79.107 )
 
-[node name="Animation" parent="Objects/PlayerCharacter" index="0"]
-frame = 1
-
 [node name="Mirror" type="AnimatedSprite" parent="Objects/PlayerCharacter" index="4"]
 material = SubResource( 2 )
 position = Vector2( 0.0397301, 0.990776 )
 z_index = 6
 frames = ExtResource( 11 )
 animation = "walk_down"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, -23 )
 
@@ -137,23 +202,174 @@ required_states = [ "gate6" ]
 position = Vector2( -0.00201416, 256.631 )
 required_states = [ "gate7" ]
 
-[node name="Neuron1" parent="Objects" index="17" instance=ExtResource( 12 )]
-position = Vector2( 49.5822, -137.573 )
+[node name="Gate8" parent="Objects" index="17" instance=ExtResource( 8 )]
+position = Vector2( -864.031, -203.87 )
+required_states = [ "quiz" ]
 
-[node name="Neuron2" parent="Objects" index="18" instance=ExtResource( 12 )]
-position = Vector2( -42.5988, 212.994 )
+[node name="Neuron1" parent="Objects" index="18" instance=ExtResource( 12 )]
+position = Vector2( 37.6659, -116.918 )
 
-[node name="Neuron3" parent="Objects" index="19" instance=ExtResource( 12 )]
-position = Vector2( -675.993, 154.333 )
+[node name="DialogueInteraction" parent="Objects/Neuron1" index="3" instance=ExtResource( 27 )]
+dialogue_path = "res://assets/data/dialogues/start.json"
 
-[node name="NeuronProfessor" parent="Objects" index="20" instance=ExtResource( 13 )]
+[node name="CollisionShape" parent="Objects/Neuron1/DialogueInteraction" index="0"]
+shape = SubResource( 5 )
+
+[node name="Neuron2" parent="Objects" index="19" instance=ExtResource( 12 )]
+position = Vector2( 26.3133, 176.435 )
+
+[node name="TextInteraction" parent="Objects/Neuron2" index="3" instance=ExtResource( 9 )]
+text = "There has to be a way to get in here."
+
+[node name="CollisionShape" parent="Objects/Neuron2/TextInteraction" index="0"]
+shape = SubResource( 6 )
+
+[node name="Neuron3" parent="Objects" index="20" instance=ExtResource( 12 )]
+position = Vector2( -839.42, 70.2834 )
+
+[node name="TextInteraction" parent="Objects/Neuron3" index="3" instance=ExtResource( 9 )]
+text = "After all the time I spent taking care of this gardne!Look at this mess!"
+
+[node name="CollisionShape" parent="Objects/Neuron3/TextInteraction" index="0"]
+shape = SubResource( 4 )
+
+[node name="NeuronProfessor" parent="Objects" index="21" instance=ExtResource( 13 )]
 position = Vector2( -910.636, -145.255 )
 
-[node name="Neuron5" parent="Objects" index="21" instance=ExtResource( 12 )]
+[node name="DialogueInteraction" parent="Objects/NeuronProfessor" index="3" instance=ExtResource( 27 )]
+dialogue_path = "res://assets/data/dialogues/quiz.json"
+
+[node name="Neuron5" parent="Objects" index="22" instance=ExtResource( 12 )]
 position = Vector2( 1106.5, 612.225 )
 
-[node name="Neuron6" parent="Objects" index="22" instance=ExtResource( 12 )]
+[node name="Animation" parent="Objects/Neuron5" index="0"]
+animation = "walk_up"
+frame = 3
+
+[node name="TextInteraction" parent="Objects/Neuron5" index="3" instance=ExtResource( 9 )]
+text = "I can't seem to figure out what these levers do.Perhaps, you can?"
+
+[node name="CollisionShape" parent="Objects/Neuron5/TextInteraction" index="0"]
+shape = SubResource( 7 )
+
+[node name="Neuron6" parent="Objects" index="23" instance=ExtResource( 12 )]
 position = Vector2( 1013.59, 10.3635 )
+
+[node name="TextInteraction" parent="Objects/Neuron6" index="3" instance=ExtResource( 9 )]
+text = "No matter what I do, I keep ending up right back here... [tornado] :( :( :( [/tornado]"
+
+[node name="CollisionShape" parent="Objects/Neuron6/TextInteraction" index="0"]
+shape = SubResource( 8 )
+
+[node name="Basket" parent="Objects" index="24" instance=ExtResource( 14 )]
+position = Vector2( 123.738, 468.904 )
+z_index = 8
+texture = ExtResource( 15 )
+
+[node name="TextInteraction" parent="Objects/Basket" index="0"]
+animation = "obtain_animation_basket"
+text = "Got you!"
+
+[node name="CollisionShape" parent="Objects/Basket/TextInteraction" index="0"]
+position = Vector2( -4.34552, -20.7828 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D" parent="Objects/Basket/KinematicBody2D" index="0"]
+position = Vector2( -4.69768, -16.8175 )
+shape = SubResource( 16 )
+
+[node name="Dresser" parent="Objects" index="25" instance=ExtResource( 14 )]
+position = Vector2( -1156.34, 71.94 )
+texture = ExtResource( 17 )
+
+[node name="TextInteraction" parent="Objects/Dresser" index="0"]
+animation = "obtain_animation_dresser"
+text = "Found you!"
+
+[node name="CollisionShape" parent="Objects/Dresser/TextInteraction" index="0"]
+position = Vector2( -2.05627, -12.7226 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D" parent="Objects/Dresser/KinematicBody2D" index="0"]
+position = Vector2( -2.98275, -14.6976 )
+shape = SubResource( 14 )
+
+[node name="Tables" parent="Objects" index="26" instance=ExtResource( 14 )]
+position = Vector2( -848.343, -339.578 )
+texture = ExtResource( 18 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 26, 20 )
+
+[node name="TextInteraction" parent="Objects/Tables" index="0"]
+animation = "obtain_animation_tables"
+text = "My tables!"
+
+[node name="CollisionShape" parent="Objects/Tables/TextInteraction" index="0"]
+position = Vector2( -7.05164, -11.3488 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tables/TextInteraction" index="2"]
+position = Vector2( -28.0965, -32.1733 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D" parent="Objects/Tables/KinematicBody2D" index="0"]
+position = Vector2( -7.15194, -11.7448 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Tables/KinematicBody2D" index="1"]
+position = Vector2( -27.9863, -31.1816 )
+shape = SubResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Objects/Tables" index="2"]
+position = Vector2( -27.0977, -33.0416 )
+texture = ExtResource( 18 )
+region_enabled = true
+region_rect = Rect2( 60, 0, 26, 20 )
+
+[node name="Bookcase" parent="Objects" index="27" instance=ExtResource( 14 )]
+position = Vector2( 1020.28, -531.191 )
+texture = ExtResource( 19 )
+
+[node name="TextInteraction" parent="Objects/Bookcase" index="0"]
+position = Vector2( -4.53198, -17.4702 )
+animation = "obtain_animation_bookcase"
+text = "Gotcha!"
+
+[node name="CollisionShape2D" parent="Objects/Bookcase/KinematicBody2D" index="0"]
+position = Vector2( -4.4883, -13.5928 )
+shape = SubResource( 17 )
+
+[node name="TV" parent="Objects" index="28" instance=ExtResource( 14 )]
+position = Vector2( 1409.61, -335.281 )
+texture = ExtResource( 16 )
+
+[node name="TextInteraction" parent="Objects/TV" index="0"]
+animation = "obtain_animation_tv"
+text = "Of all places..."
+
+[node name="CollisionShape" parent="Objects/TV/TextInteraction" index="0"]
+position = Vector2( -5.60742, -13.392 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D" parent="Objects/TV/KinematicBody2D" index="0"]
+position = Vector2( -5.62093, -5.82871 )
+shape = SubResource( 19 )
+
+[node name="Carpet" parent="Objects" index="29" instance=ExtResource( 14 )]
+position = Vector2( 1108.27, 317.578 )
+texture = ExtResource( 20 )
+
+[node name="TextInteraction" parent="Objects/Carpet" index="0"]
+animation = "obtain_animation_carpet"
+text = "My carpet, my carpet, my kingdom for a carpet."
+
+[node name="CollisionShape" parent="Objects/Carpet/TextInteraction" index="0"]
+position = Vector2( -4.02405, -12.0066 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D" parent="Objects/Carpet/KinematicBody2D" index="0"]
+position = Vector2( -3.37789, -7.47797 )
+shape = SubResource( 21 )
 
 [node name="1" parent="Markers" index="0" instance=ExtResource( 5 )]
 position = Vector2( 1017.93, 50.4498 )
@@ -171,7 +387,7 @@ position = Vector2( 920.767, -426.822 )
 position = Vector2( 1496.05, -250.225 )
 
 [node name="Entrance" parent="Markers" index="5" instance=ExtResource( 5 )]
-position = Vector2( -0.0875854, -125.298 )
+position = Vector2( -0.087677, -112.929 )
 tag = "entrance"
 
 [node name="Quiz" parent="Markers" index="6" instance=ExtResource( 5 )]
@@ -214,80 +430,50 @@ position = Vector2( 967.729, -19.0107 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
-[node name="Tooltip" parent="Transitions/Transition" index="1"]
-type = "interact"
-
 [node name="Transition2" parent="Transitions" index="1" instance=ExtResource( 6 )]
 position = Vector2( 1063.82, -17.7165 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
-
-[node name="Tooltip" parent="Transitions/Transition2" index="1"]
-type = "interact"
 
 [node name="Transition3" parent="Transitions" index="2" instance=ExtResource( 6 )]
 position = Vector2( 967.744, -162.544 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "5"
 
-[node name="Tooltip" parent="Transitions/Transition3" index="1"]
-type = "interact"
-
 [node name="Transition4" parent="Transitions" index="3" instance=ExtResource( 6 )]
 position = Vector2( 1015.79, -162.306 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "1"
-
-[node name="Tooltip" parent="Transitions/Transition4" index="1"]
-type = "interact"
 
 [node name="Transition5" parent="Transitions" index="4" instance=ExtResource( 6 )]
 position = Vector2( 1063.59, -162.544 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "3"
 
-[node name="Tooltip" parent="Transitions/Transition5" index="1"]
-type = "interact"
-
 [node name="Transition6" parent="Transitions" index="5" instance=ExtResource( 6 )]
 position = Vector2( 903.116, -307.163 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "4"
-
-[node name="Tooltip" parent="Transitions/Transition6" index="1"]
-type = "interact"
 
 [node name="Transition7" parent="Transitions" index="6" instance=ExtResource( 6 )]
 position = Vector2( 935.945, -307.775 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
 
-[node name="Tooltip" parent="Transitions/Transition7" index="1"]
-type = "interact"
-
 [node name="Transition8" parent="Transitions" index="7" instance=ExtResource( 6 )]
 position = Vector2( 1096.09, -307.128 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "2"
-
-[node name="Tooltip" parent="Transitions/Transition8" index="1"]
-type = "interact"
 
 [node name="Transition9" parent="Transitions" index="8" instance=ExtResource( 6 )]
 position = Vector2( 1127.48, -306.804 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "1"
 
-[node name="Tooltip" parent="Transitions/Transition9" index="1"]
-type = "interact"
-
 [node name="Transition10" parent="Transitions" index="9" instance=ExtResource( 6 )]
 position = Vector2( 919.197, -467.405 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
 marker_tag = "3"
-
-[node name="Tooltip" parent="Transitions/Transition10" index="1"]
-type = "interact"
 
 [node name="Transition11" parent="Transitions" index="10" instance=ExtResource( 6 )]
 position = Vector2( 1496.92, -291.819 )
@@ -297,9 +483,6 @@ marker_tag = "1"
 [node name="CollisionShape" parent="Transitions/Transition11" index="0"]
 position = Vector2( 0, 0.598724 )
 
-[node name="Tooltip" parent="Transitions/Transition11" index="1"]
-type = "interact"
-
 [node name="Transition12" parent="Transitions" index="11" instance=ExtResource( 6 )]
 position = Vector2( -631.799, 126.14 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -307,9 +490,6 @@ marker_tag = "entrance2"
 
 [node name="CollisionShape" parent="Transitions/Transition12" index="0"]
 shape = SubResource( 3 )
-
-[node name="Tooltip" parent="Transitions/Transition12" index="1"]
-type = "interact"
 
 [node name="Transition13" parent="Transitions" index="12" instance=ExtResource( 6 )]
 position = Vector2( -839.295, -4.62602 )
@@ -320,9 +500,6 @@ marker_tag = "quiz"
 position = Vector2( 0, 0.237823 )
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition13" index="1"]
-type = "interact"
-
 [node name="Transition15" parent="Transitions" index="13" instance=ExtResource( 6 )]
 position = Vector2( -985.192, -148.901 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -330,9 +507,6 @@ marker_tag = "maze_quiz"
 
 [node name="CollisionShape" parent="Transitions/Transition15" index="0"]
 shape = SubResource( 3 )
-
-[node name="Tooltip" parent="Transitions/Transition15" index="1"]
-type = "interact"
 
 [node name="Transition16" parent="Transitions" index="14" instance=ExtResource( 6 )]
 position = Vector2( -296.778, 123.438 )
@@ -342,9 +516,6 @@ marker_tag = "maze"
 [node name="CollisionShape" parent="Transitions/Transition16" index="0"]
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition16" index="1"]
-type = "interact"
-
 [node name="Transition17" parent="Transitions" index="15" instance=ExtResource( 6 )]
 position = Vector2( -121.131, -146.609 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -353,9 +524,6 @@ marker_tag = "maze"
 [node name="CollisionShape" parent="Transitions/Transition17" index="0"]
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition17" index="1"]
-type = "interact"
-
 [node name="Transition18" parent="Transitions" index="16" instance=ExtResource( 6 )]
 position = Vector2( 120.287, -146.609 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -363,9 +531,6 @@ marker_tag = "door_puzzle2"
 
 [node name="CollisionShape" parent="Transitions/Transition18" index="0"]
 shape = SubResource( 3 )
-
-[node name="Tooltip" parent="Transitions/Transition18" index="1"]
-type = "interact"
 
 [node name="Transition19" parent="Transitions" index="17" instance=ExtResource( 6 )]
 position = Vector2( 152.786, -148.931 )
@@ -376,9 +541,6 @@ marker_tag = "gate_puzzle"
 position = Vector2( 0.307373, 0 )
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition19" index="1"]
-type = "interact"
-
 [node name="Transition20" parent="Transitions" index="18" instance=ExtResource( 6 )]
 position = Vector2( 295.934, 122.665 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -386,9 +548,6 @@ marker_tag = "door_puzzle"
 
 [node name="CollisionShape" parent="Transitions/Transition20" index="0"]
 shape = SubResource( 3 )
-
-[node name="Tooltip" parent="Transitions/Transition20" index="1"]
-type = "interact"
 
 [node name="Transition21" parent="Transitions" index="19" instance=ExtResource( 6 )]
 position = Vector2( 632.485, 123.295 )
@@ -398,9 +557,6 @@ marker_tag = "entrance3"
 [node name="CollisionShape" parent="Transitions/Transition21" index="0"]
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition21" index="1"]
-type = "interact"
-
 [node name="Transition22" parent="Transitions" index="20" instance=ExtResource( 6 )]
 position = Vector2( 904.12, 10.4811 )
 destination_path = "res://src/level/levels/MainLevel.tscn"
@@ -408,9 +564,6 @@ marker_tag = "entrance"
 
 [node name="CollisionShape" parent="Transitions/Transition22" index="0"]
 shape = SubResource( 3 )
-
-[node name="Tooltip" parent="Transitions/Transition22" index="1"]
-type = "interact"
 
 [node name="Transition23" parent="Transitions" index="21" instance=ExtResource( 6 )]
 position = Vector2( 952.57, 568.127 )
@@ -420,11 +573,7 @@ marker_tag = "entrance"
 [node name="CollisionShape" parent="Transitions/Transition23" index="0"]
 shape = SubResource( 3 )
 
-[node name="Tooltip" parent="Transitions/Transition23" index="1"]
-type = "interact"
-
 [node name="Fog" type="Sprite" parent="." index="5"]
-visible = false
 material = ExtResource( 4 )
 position = Vector2( 162.48, -33.3218 )
 scale = Vector2( 53.4305, 36.0263 )
@@ -436,7 +585,49 @@ texture = ExtResource( 3 )
 position = Vector2( 0.366257, -177.555 )
 text = "This door... won't... budge..."
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+anims/obtain_animation_basket = ExtResource( 23 )
+anims/obtain_animation_bookcase = ExtResource( 24 )
+anims/obtain_animation_carpet = ExtResource( 21 )
+anims/obtain_animation_dresser = ExtResource( 25 )
+anims/obtain_animation_tables = ExtResource( 26 )
+anims/obtain_animation_tv = ExtResource( 22 )
+
 [editable path="Objects/PlayerCharacter"]
+
+[editable path="Objects/Neuron1/DialogueInteraction"]
+
+[editable path="Objects/Neuron2/TextInteraction"]
+
+[editable path="Objects/Neuron3/TextInteraction"]
+
+[editable path="Objects/Neuron5"]
+
+[editable path="Objects/Neuron5/TextInteraction"]
+
+[editable path="Objects/Neuron6/TextInteraction"]
+
+[editable path="Objects/Basket"]
+
+[editable path="Objects/Basket/TextInteraction"]
+
+[editable path="Objects/Dresser"]
+
+[editable path="Objects/Dresser/TextInteraction"]
+
+[editable path="Objects/Tables"]
+
+[editable path="Objects/Tables/TextInteraction"]
+
+[editable path="Objects/Bookcase"]
+
+[editable path="Objects/TV"]
+
+[editable path="Objects/TV/TextInteraction"]
+
+[editable path="Objects/Carpet"]
+
+[editable path="Objects/Carpet/TextInteraction"]
 
 [editable path="Transitions/Transition"]
 

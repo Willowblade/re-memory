@@ -12,7 +12,7 @@ extents = Vector2( 7.82944, 9.71761 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 7.69502, 5.60487 )
 
-[node name="Basket" instance=ExtResource( 1 )]
+[node name="Basket" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -8.09103 )
@@ -20,6 +20,7 @@ texture = ExtResource( 2 )
 
 [node name="ActiveInteraction" parent="." index="1"]
 position = Vector2( 0, -0.334702 )
+text = "I used to get in so much trouble for leaving my socks on the floor."
 
 [node name="CollisionShape" parent="ActiveInteraction" index="0"]
 position = Vector2( 0, -8.82841 )
@@ -30,6 +31,7 @@ position = Vector2( 0, -24.7069 )
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, -0.334702 )
+text = "Do I even need a laundry basket in this space?"
 
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
 position = Vector2( 0, -8.9904 )

@@ -7,6 +7,7 @@
 [node name="Level" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 1 )
+audio_track = "res://assets/audio/mainLoop.ogg"
 
 [node name="Background" type="Node2D" parent="."]
 

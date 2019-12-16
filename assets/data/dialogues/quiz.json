@@ -5,52 +5,141 @@
             "entry": "start",
             "conditions": []
         },
-        {
-            "entry": "start-again",
-            "conditions": [
-                "story:talked-once"
-            ]
-        }
     ],
     "parts": {
         "start": {
-            "text": "Hello! This is a [wave]test dialogue[/wave].",
-            "triggers_conditions": ["story:talked-once"]
+            "text": "Hello young lady. My name is Dr. Neuron Neuronicity and I will be your quizmaster today.",
+            "next": "quizmaster"
         },
-        "start-again": {
-            "text": "You're back? Is the dialogue not working?",
+        "quizmaster": {
+            "text": "To proceed past this gate, you must answer all my questions correctly. Are you ready?",
             "options": [
                 {
-                    "text": "Bugger, it does!",
-                    "next": "works"
+                    "text": "Yes!",
+                    "next": "question1"
                 },
                 {
-                    "text": "Not really...",
-                    "next": "does-not-work"
+                    "text": "Give me some time to collect my thoughts..."
                 }
             ]
         },
-        "works": {
-            "text": "See! If you put your mind to it, you can develop anything!",
+        "question1": {
+            "text": "First question. What age was JohnGabrielUK when he wrote his first composition for the London Symphony Orchestra?",
             "options": [
                 {
-                    "text": "Thanks mom!"
+                    "text": "3 years old.",
+                    "next": "question1"
                 },
                 {
-                    "text": "Thanks old man?"
+                    "text": "4 years old.",
+                    "next": "question1"
+                },
+                {
+                    "text": "5 years old.",
+                    "next": "q1correct"
+                },
+                {
+                    "text": "6 years old",
+                    "next": "question1"
                 }
             ]
         },
-        "does-not-work": {
-            "text": "Better try developing a little harder!",
+        "q1correct": {
+            "text": "A lucky shot! Better prepare for the next question",
+            "next": "question2"
+        },
+        "question2": {
+            "text": "You won't see this one coming. Mirror mirror, on the wall. Who is the fairest of them all?",
             "options": [
                 {
-                    "text": "Roger that!"
+                    "text": "Aemeta.",
+                    "next": "question2"
                 },
                 {
-                    "text": "Oh man..."
+                    "text": "Aemetta.",
+                    "next": "q2correct"
+                },
+                {
+                    "text": "Aematta.",
+                    "next": "question2"
+                },
+                {
+                    "text": "Aemette.",
+                    "next": "q2correct"
                 }
             ]
+        },
+        "q2correct": {
+            "text": "You're better at this than I thought!",
+            "next": "question3"
+        },
+        "question3": {
+            "text": "Next question. What is a pessimists blood type?",
+            "options": [
+                {
+                    "text": "O negative",
+                    "next": "question3"
+                },
+                {
+                    "text": "A positive.",
+                    "next": "q3correct"
+                },
+                {
+                    "text": "B negative.",
+                    "next": "question3"
+                }
+            ]
+        },
+        "q3correct": {
+            "text": "Another right answer! Most people don't expect it...",
+            "next": "question4"
+        },
+        "question4": {
+            "text": "You'd better be into STEM for this one. If a train leaves Miami Florida at 3:45am, going 175 mph, how much water can it hold?",
+            "options": [
+                {
+                    "text": "30 minutes.",
+                    "next": "question4"
+                },
+                {
+                    "text": "Hopscotch.",
+                    "next": "question4"
+                },
+                {
+                    "text": "7.",
+                    "next": "question4"
+                },
+                {
+                    "text": "Blue",
+                    "next": "q4correct"
+                }
+            ]
+        },
+        "q4correct": {
+            "text": "Well done!",
+            "next": "question5"
+        },
+        "question5": {
+            "text": "Final question... What... is the air-speed velocity of an unladen swallow?",
+            "options": [
+                {
+                    "text": "An African swallow?",
+                    "next": "dontknow"
+                },
+                {
+                    "text": "A European swallow?",
+                    "next": "dontknow"
+                },
+            ]
+        },
+
+        "dontknow": {
+            "text": "Golly, I wouldn't know! [wave]AAAAAAAAH[/wave]!!",
+            "next": "completed"
+        },
+        "completed": {
+            "text": "Well done! You have officially beaten Dr. Neuronicity.",
+            "triggers_conditions": ["quiz"]
         }
     }
 }

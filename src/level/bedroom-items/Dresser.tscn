@@ -12,7 +12,7 @@ extents = Vector2( 6.66926, 18.9489 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 7.82733, 27.4545 )
 
-[node name="Dresser" instance=ExtResource( 1 )]
+[node name="Dresser" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -34.1975 )
@@ -20,23 +20,25 @@ texture = ExtResource( 2 )
 
 [node name="ActiveInteraction" parent="." index="1"]
 position = Vector2( 0, 5.06844 )
+text = "They are part of what makes me, me."
 
 [node name="CollisionShape" parent="ActiveInteraction" index="0"]
 position = Vector2( 0.991653, -45.5632 )
 shape = SubResource( 1 )
 
 [node name="Tooltip" parent="ActiveInteraction" index="1"]
-position = Vector2( 0, -52.4473 )
+position = Vector2( 0, -71.9498 )
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, 5.06844 )
+text = "It's funny how much clothes can mean to you."
 
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
 position = Vector2( 1.3222, -45.4886 )
 shape = SubResource( 2 )
 
 [node name="Tooltip" parent="InactiveInteraction" index="1"]
-position = Vector2( 0, -49.6927 )
+position = Vector2( 0, -72.2803 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0, -27.1766 )

@@ -14,8 +14,9 @@ var player_states = []
 # var unlocked_furniture = ["treasure_boxx"]
 var unlocked_furniture = []
 # var unlocked_furniture = ["bookcase", "carpet", "basket", "tables", "tv", "dresser"]
+# var unlocked_furniture = ["treasure_box", "bookcase", "carpet", "basket", "tables", "tv", "dresser"]
 
-
+var num_resets = 0
 
 var lever_states = {}
 

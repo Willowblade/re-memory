@@ -9,7 +9,7 @@ extents = Vector2( 17.8701, 5.89457 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.5039, 6.74917 )
 
-[node name="Carpet" instance=ExtResource( 1 )]
+[node name="Carpet" index="0" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 45.9548 )
@@ -18,20 +18,26 @@ texture = ExtResource( 2 )
 [node name="ActiveInteraction" parent="." index="1"]
 position = Vector2( 0, 45.9548 )
 z_index = -1
+text = "I remember my grandma got this for me."
 
 [node name="CollisionShape" parent="ActiveInteraction" index="0"]
 z_index = -1
 shape = SubResource( 1 )
 
 [node name="Tooltip" parent="ActiveInteraction" index="1"]
+position = Vector2( 0, -21.5446 )
 z_index = -1
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, 45.9548 )
 z_index = -1
+text = "I would spend hours sitting here playing games."
 
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
 shape = SubResource( 2 )
+
+[node name="Tooltip" parent="InactiveInteraction" index="1"]
+position = Vector2( 0, -21.1599 )
 
 [editable path="ActiveInteraction"]
 

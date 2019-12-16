@@ -29,7 +29,9 @@ onready var items = {
 	"treasure_box": $Objects/TreasureBox,
 }
 
-
+func run_start_code():
+	pass
+	
 func _ready():
 	Clock.speed_factor = clock_speed
 	
@@ -49,9 +51,10 @@ func _ready():
 		ai.set_character(object)
 		ais.add_child(ai)
 	
-	prepare_furniture()
+
 	# this causes the scene to load its defaults
 	play_animation("start")
+	prepare_furniture()
 	
 	PlayerState.connect("updated_player_states", self, "_on_updated_player_states")
 	

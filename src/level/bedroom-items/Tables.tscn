@@ -26,6 +26,7 @@ texture = ExtResource( 2 )
 
 [node name="ActiveInteraction" parent="." index="1"]
 position = Vector2( 0, -13.1847 )
+text = "Well now I have my alarm clock back too... Not that I was missing it."
 
 [node name="CollisionShape" parent="ActiveInteraction" index="0"]
 position = Vector2( -33.1034, 0.774002 )
@@ -40,6 +41,7 @@ shape = SubResource( 2 )
 
 [node name="InactiveInteraction" parent="." index="2"]
 position = Vector2( 0, -13.1847 )
+text = "IKEA has served our family well"
 
 [node name="CollisionShape" parent="InactiveInteraction" index="0"]
 position = Vector2( -33.282, 0.952616 )
