@@ -1,6 +1,11 @@
 extends Node2D
 class_name Level
 
+export var clock_speed = 1.0
+
+export(String, FILE) var audio_track = ""
+
+
 onready var tilemap = $Background/TileMap
 onready var player = $Objects/PlayerCharacter
 onready var clock = $Objects/PlayerCharacter/Camera/Clock
@@ -26,6 +31,11 @@ onready var items = {
 
 
 func _ready():
+	Clock.speed_factor = clock_speed
+	
+	if audio_track != "" or audio_track != null:
+		AudioEngine.play_background_music(audio_track)
+	
 	for object in objects:
 		if object is Gate:
 			object.update()
@@ -39,16 +49,19 @@ func _ready():
 		ai.set_character(object)
 		ais.add_child(ai)
 	
+	prepare_furniture()
+	# this causes the scene to load its defaults
+	play_animation("start")
+	
+	PlayerState.connect("updated_player_states", self, "_on_updated_player_states")
+	
+func prepare_furniture():
 	for furniture in items:
 		if items[furniture] != null:
 			if furniture in PlayerState.unlocked_furniture:
 				items[furniture].hide()
 				items[furniture].get_node("KinematicBody2D").get_node("CollisionShape2D").disabled = true
 				items[furniture].get_node("TextInteraction").disable()
-	# this causes the scene to load its defaults
-	play_animation("start")
-	
-	PlayerState.connect("updated_player_states", self, "_on_updated_player_states")
 
 func _on_updated_player_states():
 	for object in objects:

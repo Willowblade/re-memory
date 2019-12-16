@@ -1,0 +1,139 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://src/level/CharacterController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/level/AIIdleParameters.gd" type="Script" id=2]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_5.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_down_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_4.png" type="Texture" id=18]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_0.png" type="Texture" id=19]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_right_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_5.png" type="Texture" id=21]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_left_3.png" type="Texture" id=22]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_2.png" type="Texture" id=23]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_3.png" type="Texture" id=25]
+[ext_resource path="res://assets/graphics/characters/neuron/neuron_up_4.png" type="Texture" id=26]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_0.png" type="Texture" id=27]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_3.png" type="Texture" id=28]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_5.png" type="Texture" id=29]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_2.png" type="Texture" id=30]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_1.png" type="Texture" id=31]
+[ext_resource path="res://assets/graphics/characters/neuron professor/neuron_down_4.png" type="Texture" id=32]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+look_around = null
+change_look_direction_time = 4
+change_look_direction_time_variation = 2.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_up_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_up_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 20 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_up_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_down_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down_left",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk_down_right",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_up_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk_up",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle_down_right",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.78464, 9.00589 )
+
+[node name="NeuronProfessor" instance=ExtResource( 1 )]
+ai_parameters = SubResource( 1 )
+
+[node name="Animation" parent="." index="0"]
+position = Vector2( 0, -18.2866 )
+frames = SubResource( 2 )
+animation = "idle_down"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource( 3 )

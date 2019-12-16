@@ -10,10 +10,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 4, 4.001 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -115.117, -43.8277 ), Vector2( 501.177, -23.6082 ) ]
+"values": [ Vector2( 2, -120 ), Vector2( 999.301, 507.854 ), Vector2( 1000, 508 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Objects/TreasureBox:rotation_degrees")

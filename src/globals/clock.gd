@@ -6,6 +6,8 @@ var timer: float
 
 var in_game_time_enabled: bool = false
 
+var speed_factor = 1.0
+
 func _ready():
 	pass
 
@@ -25,7 +27,7 @@ func stop():
 func _process(delta: float):
 	always_running_timer += delta
 	if in_game_time_enabled:
-		timer += delta
+		timer += delta * speed_factor
 	
 func get_time():
 	return timer

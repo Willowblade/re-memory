@@ -2,12 +2,12 @@ extends Character
 class_name CharacterController
 
 
-export var ai_parameters: Resource
+export var ai_parameters: Resource = null
 
 
 onready var ai_scenes = {
 	"RANDOM_PATROL": preload("res://src/level/AIRandomPatrol.tscn"),
-	"IDLE": preload("res://src/level/AIRandomPatrol.tscn")
+	"IDLE": preload("res://src/level/AIIdle.tscn")
 }
 
 var character: Character
@@ -20,7 +20,7 @@ func _ready():
 			child.connect("interacted", self, "_on_interaction_interacted")
 		
 func generate_ai():
-	if ai_parameters:
+	if ai_parameters != null:
 		return ai_scenes.get(ai_parameters.type).instance()
 	else:
 		return ai_scenes.IDLE.instance()

@@ -6,7 +6,7 @@ onready var levels = {
 	"base": preload("res://src/level/levels/TestLevelBase.tscn"),
 	"destination": preload("res://src/level/levels/TestLevelDestination.tscn"),
 	"bedroom": preload("res://src/level/levels/Bedroom.tscn"),
-	"door": preload("res://src/level/DoorLevel.tscn"),
+	"empty": preload("res://src/level/DoorLevel.tscn"),
 	"main": preload("res://src/level/levels/MainLevel.tscn")
 }
 
@@ -18,15 +18,24 @@ func _ready():
 	ui.clock.connect("finished", self, "_on_clock_finised")
 
 func _on_clock_finised():
+	ui.clock.disconnect("finished", self, "_on_clock_finised")
 	Clock.stop()
+
 	
 	if level != null:
 		Transitions.fade_to_opaque()
 		yield(Transitions, "transition_completed")
+		
+	if ui.open_uis.size() > 0:
+		for open_ui in ui.open_uis:
+			ui._on_close_ui(open_ui)
+			
 	reset_contents()
 	
-	level_path = "res://src/level/DoorLevel.tscn"
-	_load_level(levels.door)
+	level_path = "res://src/level/levels/Bedroom.tscn"
+	
+	level = levels.bedroom.instance()
+	add_child(level)
 	
 	PlayerState.reset_player_states()
 	
@@ -37,14 +46,18 @@ func _on_clock_finised():
 	
 	Clock.reset()
 	Clock.start()
+	ui.clock.connect("finished", self, "_on_clock_finised")
 	
 	
 func game_start():
 	Clock.reset()
 	Clock.stop()
-	level_path = "res://src/level/DoorLevel.tscn"
+#	level_path = "res://src/level/DoorLevel.tscn"
 	level_path = "res://src/level/levels/MainLevel.tscn"
-	_load_level(levels.main)
+	level_path = "res://src/level/levels/Bedroom.tscn"
+#	_load_level(levels.empty)
+#	_load_level(levels.main)
+	_load_level(levels.bedroom)
 	Clock.start()
 
 func reset_contents():

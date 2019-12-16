@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/graphics/furniture_in_room/bedroom.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/level/bedroom-items/Basket.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/level/bedroom-items/Dresser.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/level/bedroom-items/TreasureBox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/interactable/Transition.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128.325, 10 )
@@ -28,6 +29,7 @@ extents = Vector2( 20.4454, 27.1942 )
 
 [node name="Bedroom" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+clock_speed = 0.2
 
 [node name="Image" type="Sprite" parent="Background" index="1"]
 z_index = -1
@@ -91,6 +93,16 @@ z_index = 1
 
 [node name="Bookcase" parent="Objects" index="7" instance=ExtResource( 4 )]
 position = Vector2( 39.1885, -25.1082 )
+
+[node name="RegularTransition" parent="Transitions" index="0" instance=ExtResource( 11 )]
+position = Vector2( 79.3976, -50.723 )
+destination_path = "res://src/level/levels/MainLevel.tscn"
+marker_tag = "entrance"
+
+[node name="EmptyRoomTransition" parent="Transitions" index="1" instance=ExtResource( 11 )]
+position = Vector2( 80.1882, -51.7771 )
+destination_path = "res://src/level/DoorLevel.tscn"
+marker_tag = "entrance"
 
 [editable path="Objects/TV"]
 
