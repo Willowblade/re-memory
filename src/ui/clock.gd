@@ -36,6 +36,6 @@ func make_time(seconds: float) -> Dictionary :
 	}
 
 func _process(true):
-	var time = Clock.get_time()
-	set_time(make_time(time))
+	var clock_time = Clock.get_time()
+	set_time(make_time(clock_time))
 

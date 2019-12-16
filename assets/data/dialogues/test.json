@@ -14,7 +14,7 @@
     ],
     "parts": {
         "start": {
-            "text": "Hello! This is a [wave]test dialogue[/wave].",
+            "text": "Hello! This is a test dialogue.",
             "triggers_conditions": ["story:talked-once"]
         },
         "start-again": {

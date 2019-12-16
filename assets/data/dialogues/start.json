@@ -14,7 +14,7 @@
     ],
     "parts": {
         "start": {
-            "text": "Hello! Nice to  meet you! It's a [wave]mess[/wave] around here.",
+            "text": "Hello! Nice to  meet you! It's a mess around here.",
             "triggers_conditions": ["story:talked-once"],
             "options": [
                 {
@@ -45,7 +45,7 @@
             ]
         },
         "works": {
-            "text": "Thanks! But try to be quick... This world feels, [wave]unstable...[/wave]. I'm not sure how long it can last."
+            "text": "Thanks! But try to be quick... This world feels, unstable.... I'm not sure how long it can last."
         },
         "does-not-work": {
             "text": "Look around! There's plenty to explore. My great grand neuron once walked through one of these holes between the trees. We never saw him back."

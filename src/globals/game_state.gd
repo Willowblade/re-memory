@@ -6,4 +6,4 @@ signal updated_game_state(game_state)
 
 
 func _ready():
-	AudioEngine.set_master_volume(0.6)
+	AudioEngine.set_master_volume(0.4)

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2623, 6.70007 )
 
-[node name="Bookcase" index="0" instance=ExtResource( 1 )]
+[node name="Bookcase" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -16.858 )

@@ -129,12 +129,12 @@
                 {
                     "text": "A European swallow?",
                     "next": "dontknow"
-                },
+                }
             ]
         },
 
         "dontknow": {
-            "text": "Golly, I wouldn't know! [wave]AAAAAAAAH[/wave]!!",
+            "text": "Golly, I wouldn't know! AAAAAAAAH!!",
             "next": "completed"
         },
         "completed": {

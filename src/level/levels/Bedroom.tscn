@@ -30,7 +30,6 @@ extents = Vector2( 20.4454, 27.1942 )
 
 [node name="Bedroom" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-clock_speed = 1.0
 
 [node name="Image" type="Sprite" parent="Background" index="1"]
 z_index = -1

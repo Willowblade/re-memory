@@ -63,7 +63,7 @@ func _on_clock_finised():
 #	level.run_start_code()
 	if level is BedroomWakeup:
 		if PlayerState.num_resets == 1:
-			ui.show_text("[wave]Wake up.[/wave]")
+			ui.show_text("Wake up.")
 			yield(ui, "closed")
 			yield(get_tree().create_timer(0.5), "timeout")
 			level.set_awake()
@@ -71,7 +71,7 @@ func _on_clock_finised():
 			ui.show_text("The world went dark... And now I'm here again...")
 			yield(ui, "closed")
 		else:
-			ui.show_text("[wave]Wake up.[/wave]")
+			ui.show_text("Wake up.")
 			yield(ui, "closed")
 			level.set_awake()
 			yield(get_tree().create_timer(0.5), "timeout")
@@ -86,7 +86,7 @@ func _on_clock_finised():
 	if level is Hospital:
 		Clock.stop()
 
-		ui.show_text("[wave]Wake up.[/wave]")
+		ui.show_text("Wake up.")
 		yield(ui, "closed")
 		yield(get_tree().create_timer(0.5), "timeout")
 		level.set_awake()

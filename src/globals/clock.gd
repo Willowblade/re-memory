@@ -2,7 +2,7 @@ extends Node
 
 
 var always_running_timer: float
-var timer: float
+var time_data: float
 
 var in_game_time_enabled: bool = false
 
@@ -12,11 +12,11 @@ func _ready():
 	pass
 
 func reset():
-	timer = 0
+	time_data = 0
 	
 func start():
 	in_game_time_enabled = true
-	timer = 0
+	time_data = 0
 	
 func pause():
 	in_game_time_enabled = false
@@ -27,7 +27,7 @@ func stop():
 func _process(delta: float):
 	always_running_timer += delta
 	if in_game_time_enabled:
-		timer += delta * speed_factor
+		time_data += delta * speed_factor
 	
 func get_time():
-	return timer
+	return time_data

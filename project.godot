@@ -140,27 +140,29 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GWJ 16"
+config/name="re: Memory"
 run/main_scene="res://src/game/Game.tscn"
-boot_splash/image="res://assets/ui/splash-icon-all-in.png"
-boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://icon.png"
+boot_splash/image="res://assets/graphics/extra/re_memory_logo_v2.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://assets/graphics/extra/rem_icon.png"
 
 [autoload]
 
 Logger="*res://src/globals/Logger.tscn"
 AudioEngine="*res://src/audio/AudioEngine.tscn"
+Clock="*res://src/globals/Clock.tscn"
 Inventory="*res://src/globals/Inventory.tscn"
 Transitions="*res://src/globals/Transitions.tscn"
 Flow="*res://src/globals/Flow.tscn"
+PlayerState="*res://src/globals/PlayerState.tscn"
 GameState="*res://src/globals/GameState.tscn"
 Preferences="*res://src/globals/Preferences.tscn"
-Clock="*res://src/globals/Clock.tscn"
-PlayerState="*res://src/globals/PlayerState.tscn"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 

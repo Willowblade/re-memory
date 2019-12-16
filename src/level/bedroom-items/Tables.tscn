@@ -18,7 +18,7 @@ extents = Vector2( 10, 9.23072 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 9.56594, 9.14421 )
 
-[node name="Tables" index="0" instance=ExtResource( 1 )]
+[node name="Tables" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -9.12256 )

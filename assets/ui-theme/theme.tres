@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=5 format=2]
 
-[ext_resource path="res://assets/fonts/orange-kid/orange kid.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/ui-theme/stylebox.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui-theme/stylebox.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/orange-kid/orange kid.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 8.0
 margin_right = 8.0
@@ -13,7 +13,7 @@ margin_bottom = 8.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [resource]
 default_font = SubResource( 2 )
