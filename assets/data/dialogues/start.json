@@ -35,7 +35,7 @@
             "text": "Will you help us put things back to where they go?",
             "options": [
                 {
-                    "text": "(Hmm... Maybe that's how I can get out of here...) I will do my best!",
+                    "text": "I will do my best!",
                     "next": "works"
                 },
                 {
@@ -45,10 +45,14 @@
             ]
         },
         "works": {
-            "text": "Thanks! But try to be quick... This world feels, unstable.... I'm not sure how long it can last."
+            "text": "Thanks! But try to be quick... This world feels, unstable... My fellow neurons have been feeling uneasy. I'm not sure how long it can last."
         },
         "does-not-work": {
-            "text": "Look around! There's plenty to explore. My great grand neuron once walked through one of these holes between the trees. We never saw him back."
+            "text": "Look around! There's plenty to explore. My great grand neuron once walked through one of these holes between the trees. We never saw him back.",
+            "next": "unstable"
+        },
+        "unstable": {
+            "text": "Try to be quick though, this world feels, unstable... You may not have much time left."
         }
     }
 }

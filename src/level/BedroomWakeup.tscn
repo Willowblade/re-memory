@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/graphics/room/bedroom_room_sleep.png" type="Texture" id=3]
 [ext_resource path="res://assets/graphics/room/bedroom_room_awake.png" type="Texture" id=4]
 
-[node name="BedroomWakeup" instance=ExtResource( 1 )]
+[node name="BedroomWakeup" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 clock_speed = 0.0
 
@@ -15,8 +15,17 @@ texture = ExtResource( 3 )
 [node name="Awake" type="Sprite" parent="Background" index="1"]
 texture = ExtResource( 4 )
 
-[node name="PlayerCharacter" parent="Objects" index="0"]
+[node name="Animation" parent="Objects/PlayerCharacter" index="0"]
 visible = false
+frame = 3
+
+[node name="CollisionShape" parent="Objects/PlayerCharacter" index="1"]
+shape = null
+
+[node name="RayCast" parent="Objects/PlayerCharacter" index="2"]
+enabled = false
+
+[editable path="Objects/PlayerCharacter"]
 
 [editable path="Objects/TV"]
 

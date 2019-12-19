@@ -16,6 +16,7 @@ signal interacted
 
 
 func _ready():
+	tooltip.z_index = 10
 	for child in get_children():
 		if child is CollisionShape2D or child is CollisionPolygon2D:
 			shapes.append(child)

@@ -42,6 +42,7 @@ func set_options(player_options):
 		options[i].visible = true
 		option_pointers[i].visible = true
 
+	selected_option = 0
 	select_option(selected_option)
 		
 	visible = true
@@ -85,6 +86,8 @@ func select_option(index: int):
 	selected_option = index
 	if selected_option < 0:
 		selected_option += _player_options.size()
+	if selected_option >= _player_options.size():
+		selected_option = 0
 	print(selected_option)
 
 	for i in range(_player_options.size()):

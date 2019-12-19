@@ -16,12 +16,12 @@ func go_to_main_menu():
 	get_tree().change_scene_to(menu)
 	
 func pause():
-	yield(get_tree().create_timer(0.0), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	get_tree().paused = true
 
 func resume():
 	# this makes sure that the player's inputs aren't immediately processed, otherwise infinite loop for dialogue and textbox
-	yield(get_tree().create_timer(0.0), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	get_tree().paused = false
 	
 func quit():

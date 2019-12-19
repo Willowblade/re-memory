@@ -31,3 +31,8 @@ func _process(delta: float):
 	
 func get_time():
 	return time_data
+	
+	
+func _input(event):
+	if Input.is_key_pressed(KEY_1):
+		time_data += 15

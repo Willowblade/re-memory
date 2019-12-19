@@ -67,11 +67,15 @@ func close_all_ui():
 
 func _physics_process(event):
 	if Input.is_action_just_pressed("ui_menu"):
-#		if open_uis.size() == 0:
-		Clock.stop()
-		for open_ui in open_uis:
-			open_ui.set_physics_process(false)
-		open_ui("escape")
+		if not menus.escape in open_uis: 
+	#		if open_uis.size() == 0:
+			Clock.stop()
+			for open_ui in open_uis:
+				open_ui.set_physics_process(false)
+			open_ui("escape")
+		else:
+			_on_close_ui(menus.escape)
+			
 
 func show_text(text: String):
 	Flow.pause()

@@ -6,16 +6,16 @@
 [ext_resource path="res://src/level/lever.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.61168, 4.06272 )
+extents = Vector2( 10.3755, 9.53986 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5.25666, 4.52341 )
+extents = Vector2( 12.0843, 10.5887 )
 
 [node name="Lever" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 
 [node name="CollisionShape" parent="." index="0"]
-position = Vector2( 0, -4.23842 )
+position = Vector2( -0.0626717, -8.18051 )
 shape = SubResource( 1 )
 
 [node name="Active" type="Sprite" parent="." index="1"]
@@ -33,5 +33,5 @@ position = Vector2( 0, -23.0349 )
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2( 0.0460663, -4.19235 )
+position = Vector2( 0.0460663, -8.32246 )
 shape = SubResource( 2 )

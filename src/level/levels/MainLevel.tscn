@@ -271,7 +271,7 @@ position = Vector2( -688.015, 148.056 )
 ai_parameters = SubResource( 7 )
 
 [node name="TextInteraction" parent="Objects/Neuron3" index="3" instance=ExtResource( 10 )]
-text = "After all the time I spent taking care of this gardne!Look at this mess!"
+text = "After all the time I spent taking care of this garden! Look at this mess!"
 
 [node name="CollisionShape" parent="Objects/Neuron3/TextInteraction" index="0"]
 shape = SubResource( 8 )
