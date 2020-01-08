@@ -1,37 +1,12 @@
-## Godot Jam Template
+# Re: memory
+Find the game here: https://willowblade.itch.io/re-memory
 
+### Summary
+The story of a young girl trying to pick up the pieces of what she's lost.
 
-The jam template is built to facilitate building jam games by providing 
-a lot of batteries to get a game up and running.
+### Controls
+* [ARROW KEYS] to move.
+* [E] or [SPACE] to interact.
+* Controllers also supported! Arrow buttons and Square/X to interact.
 
-Most important in this is:
-* A base folder structure to get started quick for all parties involved.
-* A menu with start screen.
-* A working and easily usable audio engine.
-* A base for in-game UI 
-
-Optional:
-* Game templates to not have to mess around with base mechanics but start with implementing unique mechanics faster
-
-
-
-### Included:
-
-* AudioEngine
-* Globals:
-    * Game state:
-        * GameState
-        * Inventory
-    * Game flow:
-        * Flow
-        * Transitions
-* UI 
-* Menu to start the game
-
-
-* Game templates:
-    * Top down RPG
-
-### TODO:
-
-* Add export templates and CLI for autozip, maybe integrate with itch's butler.
+Special thanks to JohnGabrielUK for our Icon and banner and title screen text art! Much appreciated!
